@@ -16,10 +16,10 @@ namespace SandBox
         {
             InitializeComponent();
         }
-
+        
         private void sandBoxMain_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show(" Welcome! - id : " + Session.curSession.id);
         }
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
