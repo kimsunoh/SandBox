@@ -68,8 +68,8 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage_add_pat = new System.Windows.Forms.TabPage();
             this.btn_pat_add = new System.Windows.Forms.Button();
-            this.sex_fem = new System.Windows.Forms.RadioButton();
-            this.sex_man = new System.Windows.Forms.RadioButton();
+            this.rd_sex_fem = new System.Windows.Forms.RadioButton();
+            this.rd_sex_man = new System.Windows.Forms.RadioButton();
             this.textbox_feat = new System.Windows.Forms.TextBox();
             this.textBox_age = new System.Windows.Forms.TextBox();
             this.textBox_name = new System.Windows.Forms.TextBox();
@@ -90,6 +90,9 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tb_img_path = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage_add_fig.SuspendLayout();
@@ -142,9 +145,14 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
+            this.listBox1.Items.AddRange(new object[] {
+            "내담자 관리",
+            "상담내역 관리",
+            "모래놀이상자 사진관리",
+            "피규어 데이터관리"});
             this.listBox1.Location = new System.Drawing.Point(311, 188);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 88);
+            this.listBox1.Size = new System.Drawing.Size(138, 64);
             this.listBox1.TabIndex = 3;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -188,6 +196,9 @@
             // 
             // tabPage_add_fig
             // 
+            this.tabPage_add_fig.Controls.Add(this.label26);
+            this.tabPage_add_fig.Controls.Add(this.tb_img_path);
+            this.tabPage_add_fig.Controls.Add(this.label25);
             this.tabPage_add_fig.Controls.Add(this.textBox_add_sym);
             this.tabPage_add_fig.Controls.Add(this.label24);
             this.tabPage_add_fig.Controls.Add(this.pictureBox_fig_img);
@@ -274,6 +285,49 @@
             // comboBox_add_sel
             // 
             this.comboBox_add_sel.FormattingEnabled = true;
+            this.comboBox_add_sel.Items.AddRange(new object[] {
+            "친구",
+            "부부",
+            "가족",
+            "축구",
+            "야구",
+            "학생",
+            "곰",
+            "사자",
+            "코끼리",
+            "파리",
+            "매미",
+            "아파트",
+            "개인주택",
+            "초가집",
+            "소방서",
+            "경찰서",
+            "학교",
+            "경복궁",
+            "스포츠카",
+            "여객선",
+            "나무배",
+            "거북선",
+            "제우스",
+            "헤라클래스",
+            "인어공주",
+            "소파",
+            "침대",
+            "낫",
+            "도끼",
+            "컵",
+            "밥그릇",
+            "국그릇",
+            "전자렌지",
+            "세탁기",
+            "텔레비전",
+            "파란불",
+            "빨간불",
+            "주사기",
+            "링거",
+            "총",
+            "대포",
+            "장갑차"});
             this.comboBox_add_sel.Location = new System.Drawing.Point(349, 258);
             this.comboBox_add_sel.Name = "comboBox_add_sel";
             this.comboBox_add_sel.Size = new System.Drawing.Size(121, 20);
@@ -282,6 +336,70 @@
             // comboBox_add_div
             // 
             this.comboBox_add_div.FormattingEnabled = true;
+            this.comboBox_add_div.Items.AddRange(new object[] {
+            "역사적인물",
+            "취미",
+            "직업",
+            "관계",
+            "스포츠",
+            "인생의시기형상",
+            "수중동물",
+            "유사이전동물",
+            "실제하는동물",
+            "동물원동물",
+            "농장동물",
+            "곤충",
+            "집종류",
+            "종교적건물",
+            "공공건물",
+            "역사적건물",
+            "나뭇잎",
+            "조개껍질",
+            "비행기",
+            "자동차",
+            "선박",
+            "십자가",
+            "예수탄생장면",
+            "천사",
+            "성경책",
+            "해골",
+            "부처상",
+            "요술",
+            "고대그리스 성지의 것",
+            "피라미드",
+            "신화인물",
+            "문",
+            "울타리",
+            "기차선로",
+            "장애물 표지판",
+            "마술적인것",
+            "용",
+            "유니콘",
+            "반인반마",
+            "괴물",
+            "캐릭터",
+            "가구",
+            "농기",
+            "그릇류",
+            "가전제품",
+            "죽은것",
+            "산것",
+            "해",
+            "달",
+            "별",
+            "무지개",
+            "구름",
+            "동굴",
+            "터널",
+            "화산",
+            "불",
+            "탑",
+            "보석상자",
+            "묘비",
+            "눈사람",
+            "술",
+            "병원용품",
+            "무기"});
             this.comboBox_add_div.Location = new System.Drawing.Point(221, 258);
             this.comboBox_add_div.Name = "comboBox_add_div";
             this.comboBox_add_div.Size = new System.Drawing.Size(121, 20);
@@ -523,8 +641,8 @@
             // tabPage_add_pat
             // 
             this.tabPage_add_pat.Controls.Add(this.btn_pat_add);
-            this.tabPage_add_pat.Controls.Add(this.sex_fem);
-            this.tabPage_add_pat.Controls.Add(this.sex_man);
+            this.tabPage_add_pat.Controls.Add(this.rd_sex_fem);
+            this.tabPage_add_pat.Controls.Add(this.rd_sex_man);
             this.tabPage_add_pat.Controls.Add(this.textbox_feat);
             this.tabPage_add_pat.Controls.Add(this.textBox_age);
             this.tabPage_add_pat.Controls.Add(this.textBox_name);
@@ -551,29 +669,29 @@
             this.btn_pat_add.UseVisualStyleBackColor = true;
             this.btn_pat_add.Click += new System.EventHandler(this.btn_pat_add_Click);
             // 
-            // sex_fem
+            // rd_sex_fem
             // 
-            this.sex_fem.AutoSize = true;
-            this.sex_fem.Location = new System.Drawing.Point(329, 177);
-            this.sex_fem.Name = "sex_fem";
-            this.sex_fem.Size = new System.Drawing.Size(35, 16);
-            this.sex_fem.TabIndex = 9;
-            this.sex_fem.TabStop = true;
-            this.sex_fem.Text = "여";
-            this.sex_fem.UseVisualStyleBackColor = true;
-            this.sex_fem.CheckedChanged += new System.EventHandler(this.sex_fem_CheckedChanged);
+            this.rd_sex_fem.AutoSize = true;
+            this.rd_sex_fem.Location = new System.Drawing.Point(329, 177);
+            this.rd_sex_fem.Name = "rd_sex_fem";
+            this.rd_sex_fem.Size = new System.Drawing.Size(35, 16);
+            this.rd_sex_fem.TabIndex = 9;
+            this.rd_sex_fem.TabStop = true;
+            this.rd_sex_fem.Text = "여";
+            this.rd_sex_fem.UseVisualStyleBackColor = true;
+            this.rd_sex_fem.CheckedChanged += new System.EventHandler(this.rd_sex_fem_CheckedChanged);
             // 
-            // sex_man
+            // rd_sex_man
             // 
-            this.sex_man.AutoSize = true;
-            this.sex_man.Location = new System.Drawing.Point(274, 177);
-            this.sex_man.Name = "sex_man";
-            this.sex_man.Size = new System.Drawing.Size(35, 16);
-            this.sex_man.TabIndex = 8;
-            this.sex_man.TabStop = true;
-            this.sex_man.Text = "남";
-            this.sex_man.UseVisualStyleBackColor = true;
-            this.sex_man.CheckedChanged += new System.EventHandler(this.sex_man_CheckedChanged);
+            this.rd_sex_man.AutoSize = true;
+            this.rd_sex_man.Location = new System.Drawing.Point(274, 177);
+            this.rd_sex_man.Name = "rd_sex_man";
+            this.rd_sex_man.Size = new System.Drawing.Size(35, 16);
+            this.rd_sex_man.TabIndex = 8;
+            this.rd_sex_man.TabStop = true;
+            this.rd_sex_man.Text = "남";
+            this.rd_sex_man.UseVisualStyleBackColor = true;
+            this.rd_sex_man.CheckedChanged += new System.EventHandler(this.rd_sex_man_CheckedChanged);
             // 
             // textbox_feat
             // 
@@ -766,6 +884,31 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "이름";
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 51);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(44, 12);
+            this.label25.TabIndex = 36;
+            this.label25.Text = "label25";
+            // 
+            // tb_img_path
+            // 
+            this.tb_img_path.Location = new System.Drawing.Point(194, 207);
+            this.tb_img_path.Name = "tb_img_path";
+            this.tb_img_path.Size = new System.Drawing.Size(261, 21);
+            this.tb_img_path.TabIndex = 37;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(118, 207);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(69, 12);
+            this.label26.TabIndex = 38;
+            this.label26.Text = "이미지 경로";
+            // 
             // sandBoxMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -832,8 +975,8 @@
         private System.Windows.Forms.ComboBox comboBox_view_cate;
         private System.Windows.Forms.Button btn_find_fig;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.RadioButton sex_fem;
-        private System.Windows.Forms.RadioButton sex_man;
+        private System.Windows.Forms.RadioButton rd_sex_fem;
+        private System.Windows.Forms.RadioButton rd_sex_man;
         private System.Windows.Forms.TextBox textbox_feat;
         private System.Windows.Forms.TextBox textBox_age;
         private System.Windows.Forms.TextBox textBox_name;
@@ -858,6 +1001,9 @@
         private System.Windows.Forms.PictureBox pictureBox_view_fig;
         private System.Windows.Forms.TextBox textBox_add_sym;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox tb_img_path;
+        private System.Windows.Forms.Label label25;
     }
 }
 
