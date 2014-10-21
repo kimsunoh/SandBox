@@ -90,9 +90,9 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.tb_img_path = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.tb_search_fig = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage_add_fig.SuspendLayout();
@@ -198,7 +198,6 @@
             // 
             this.tabPage_add_fig.Controls.Add(this.label26);
             this.tabPage_add_fig.Controls.Add(this.tb_img_path);
-            this.tabPage_add_fig.Controls.Add(this.label25);
             this.tabPage_add_fig.Controls.Add(this.textBox_add_sym);
             this.tabPage_add_fig.Controls.Add(this.label24);
             this.tabPage_add_fig.Controls.Add(this.pictureBox_fig_img);
@@ -448,6 +447,7 @@
             // 
             // tabPage_amend_fig
             // 
+            this.tabPage_amend_fig.Controls.Add(this.tb_search_fig);
             this.tabPage_amend_fig.Controls.Add(this.pictureBox_view_fig);
             this.tabPage_amend_fig.Controls.Add(this.btn_del_fig);
             this.tabPage_amend_fig.Controls.Add(this.textBox_);
@@ -611,7 +611,7 @@
             // 
             // btn_find_fig
             // 
-            this.btn_find_fig.Location = new System.Drawing.Point(196, 45);
+            this.btn_find_fig.Location = new System.Drawing.Point(383, 38);
             this.btn_find_fig.Name = "btn_find_fig";
             this.btn_find_fig.Size = new System.Drawing.Size(75, 23);
             this.btn_find_fig.TabIndex = 21;
@@ -884,15 +884,6 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "이름";
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 51);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(44, 12);
-            this.label25.TabIndex = 36;
-            this.label25.Text = "label25";
-            // 
             // tb_img_path
             // 
             this.tb_img_path.Location = new System.Drawing.Point(194, 207);
@@ -908,6 +899,13 @@
             this.label26.Size = new System.Drawing.Size(69, 12);
             this.label26.TabIndex = 38;
             this.label26.Text = "이미지 경로";
+            // 
+            // tb_search_fig
+            // 
+            this.tb_search_fig.Location = new System.Drawing.Point(206, 39);
+            this.tb_search_fig.Name = "tb_search_fig";
+            this.tb_search_fig.Size = new System.Drawing.Size(178, 21);
+            this.tb_search_fig.TabIndex = 36;
             // 
             // sandBoxMain
             // 
@@ -1003,7 +1001,7 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox tb_img_path;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox tb_search_fig;
     }
 }
 
