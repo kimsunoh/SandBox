@@ -19,6 +19,8 @@ namespace SandBox
 {
     public partial class sandBoxMain : Form
     {
+        private String selectedSex;
+
         public sandBoxMain()
         {
             InitializeComponent();
@@ -196,17 +198,49 @@ namespace SandBox
 
         private void rd_sex_fem_CheckedChanged(object sender, EventArgs e)
         {
-
+            this.selectedSex = "여";
         }
 
         private void rd_sex_man_CheckedChanged(object sender, EventArgs e)
         {
-
+            this.selectedSex = "남";
         }
 
         private void btn_pat_add_Click(object sender, EventArgs e)
         {
+            if (Add_patient())
+            {
+                MessageBox.Show("Done.");
+            }
+            else
+            {
+                MessageBox.Show("Fail");
+            }
+        }
 
+        private bool Add_patient()
+        {
+           // throw new System.NotImplementedException();
+            if (textBox_name.ToString() == null)
+            {
+                Console.WriteLine("No name");
+                return false;
+            }
+            else
+            {
+                DBFactory.ExcuteNonQuery(
+                    @"INSERT INTO "
+                    + @" TB_PATIENT (IDX,PAT_NUM,PAT_NAME,PAT_AGE,PAT_SEX,PAT_FEATURE)"
+                    + @"VALUES"
+                    + @"('" + Session.curSession.id + "','"
+                    + (new Random()).Next(1000000000) + "','"
+                    + ToUtf8(textBox_name.Text) + "','"
+                    + int.Parse(textBox_age.Text) + "','"
+                    + ToUtf8(this.selectedSex) + "','"
+                    + ToUtf8(textbox_feat.Text) + "')"
+                );
+                return true;
+            }
         }
 
         private void btn_pat_search_Click(object sender, EventArgs e)

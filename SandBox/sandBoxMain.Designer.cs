@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage_add_fig = new System.Windows.Forms.TabPage();
+            this.label26 = new System.Windows.Forms.Label();
+            this.tb_img_path = new System.Windows.Forms.TextBox();
             this.textBox_add_sym = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.pictureBox_fig_img = new System.Windows.Forms.PictureBox();
@@ -49,6 +51,7 @@
             this.btn_find_image = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage_amend_fig = new System.Windows.Forms.TabPage();
+            this.tb_search_fig = new System.Windows.Forms.TextBox();
             this.pictureBox_view_fig = new System.Windows.Forms.PictureBox();
             this.btn_del_fig = new System.Windows.Forms.Button();
             this.textBox_ = new System.Windows.Forms.TextBox();
@@ -71,7 +74,6 @@
             this.rd_sex_fem = new System.Windows.Forms.RadioButton();
             this.rd_sex_man = new System.Windows.Forms.RadioButton();
             this.textbox_feat = new System.Windows.Forms.TextBox();
-            this.textBox_age = new System.Windows.Forms.TextBox();
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -90,9 +92,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.tb_img_path = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.tb_search_fig = new System.Windows.Forms.TextBox();
+            this.textBox_age = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage_add_fig.SuspendLayout();
@@ -218,6 +218,22 @@
             this.tabPage_add_fig.Text = "피규어 등록";
             this.tabPage_add_fig.UseVisualStyleBackColor = true;
             this.tabPage_add_fig.Click += new System.EventHandler(this.tabPage_add_fig_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(118, 207);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(69, 12);
+            this.label26.TabIndex = 38;
+            this.label26.Text = "이미지 경로";
+            // 
+            // tb_img_path
+            // 
+            this.tb_img_path.Location = new System.Drawing.Point(194, 207);
+            this.tb_img_path.Name = "tb_img_path";
+            this.tb_img_path.Size = new System.Drawing.Size(261, 21);
+            this.tb_img_path.TabIndex = 37;
             // 
             // textBox_add_sym
             // 
@@ -472,6 +488,13 @@
             this.tabPage_amend_fig.Text = "피규어 수정/삭제";
             this.tabPage_amend_fig.UseVisualStyleBackColor = true;
             // 
+            // tb_search_fig
+            // 
+            this.tb_search_fig.Location = new System.Drawing.Point(206, 39);
+            this.tb_search_fig.Name = "tb_search_fig";
+            this.tb_search_fig.Size = new System.Drawing.Size(178, 21);
+            this.tb_search_fig.TabIndex = 36;
+            // 
             // pictureBox_view_fig
             // 
             this.pictureBox_view_fig.Location = new System.Drawing.Point(206, 107);
@@ -701,13 +724,6 @@
             this.textbox_feat.Size = new System.Drawing.Size(182, 120);
             this.textbox_feat.TabIndex = 7;
             // 
-            // textBox_age
-            // 
-            this.textBox_age.Location = new System.Drawing.Point(274, 126);
-            this.textBox_age.Name = "textBox_age";
-            this.textBox_age.Size = new System.Drawing.Size(100, 21);
-            this.textBox_age.TabIndex = 5;
-            // 
             // textBox_name
             // 
             this.textBox_name.Location = new System.Drawing.Point(274, 85);
@@ -884,28 +900,12 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "이름";
             // 
-            // tb_img_path
+            // textBox_age
             // 
-            this.tb_img_path.Location = new System.Drawing.Point(194, 207);
-            this.tb_img_path.Name = "tb_img_path";
-            this.tb_img_path.Size = new System.Drawing.Size(261, 21);
-            this.tb_img_path.TabIndex = 37;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(118, 207);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(69, 12);
-            this.label26.TabIndex = 38;
-            this.label26.Text = "이미지 경로";
-            // 
-            // tb_search_fig
-            // 
-            this.tb_search_fig.Location = new System.Drawing.Point(206, 39);
-            this.tb_search_fig.Name = "tb_search_fig";
-            this.tb_search_fig.Size = new System.Drawing.Size(178, 21);
-            this.tb_search_fig.TabIndex = 36;
+            this.textBox_age.Location = new System.Drawing.Point(274, 126);
+            this.textBox_age.Name = "textBox_age";
+            this.textBox_age.Size = new System.Drawing.Size(100, 21);
+            this.textBox_age.TabIndex = 5;
             // 
             // sandBoxMain
             // 
@@ -976,8 +976,6 @@
         private System.Windows.Forms.RadioButton rd_sex_fem;
         private System.Windows.Forms.RadioButton rd_sex_man;
         private System.Windows.Forms.TextBox textbox_feat;
-        private System.Windows.Forms.TextBox textBox_age;
-        private System.Windows.Forms.TextBox textBox_name;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -1002,6 +1000,8 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox tb_img_path;
         private System.Windows.Forms.TextBox tb_search_fig;
+        private System.Windows.Forms.TextBox textBox_age;
+        private System.Windows.Forms.TextBox textBox_name;
     }
 }
 
