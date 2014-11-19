@@ -10,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//#include <atlstr.h>
+using System;
+using System.Text;
 
 
 namespace SandBox
@@ -147,13 +150,33 @@ namespace SandBox
 
                 DBFactory.ExcuteNonQuery(
                     @"INSERT INTO "
-                    + @" FIGURE (FIG_NUM,IMAGE,CATEGORY,DIVISION,SECTION,SYMBOL)"
+                    + @" TB_FIGURE (FIG_NUM,IMAGE,CATEGORY,DIVISION,SECTION,SYMBOL)"
                     + @"VALUES"
-                    + @"('" + (new Random()).Next(1000000000) + "','" + tb_img_path.Text + "','" + comboBox_add_cate.Text + "','" + comboBox_add_div.Text + "','" + comboBox_add_sel.Text + "','" + textBox_add_sym.Text + "')"
+                    + @"('" + (new Random()).Next(1000000000) 
+                    + "','" 
+                    + ToUtf8(tb_img_path.Text) + "','"
+                    + ToUtf8(comboBox_add_cate.Text) + "','"
+                    + ToUtf8(comboBox_add_div.Text) + "','"
+                    + ToUtf8(comboBox_add_sel.Text) + "','"
+                    + ToUtf8(textBox_add_sym.Text) + "')"
                 );
                 fs.Close();
                 return true;
             }
+        }
+
+        private string ToUtf8(string utf8String)
+        {
+ //           throw new System.NotImplementedException();
+            string propEncodeString = string.Empty;
+
+            byte[] utf8_Bytes = new byte[utf8String.Length];
+            for (int i = 0; i < utf8String.Length; ++i)
+            {
+                utf8_Bytes[i] = (byte)utf8String[i];
+            }
+
+            return Encoding.UTF8.GetString(utf8_Bytes, 0, utf8_Bytes.Length);
         }
 
         private void btn_find_fig_Click(object sender, EventArgs e)

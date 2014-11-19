@@ -21,5 +21,12 @@ namespace SandBox
         {
 
         }
+
+        private void btn_add_sb_Click(object sender, EventArgs e)
+        {
+            string strCmdText;
+            strCmdText = @"copy c:\sandBox\a.txt c:\sandBox\b.txt";
+            System.Diagnostics.Process.Start("CMD.exe", "/C " + strCmdText);
+        }
     }
 }

@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox_best_ph = new System.Windows.Forms.PictureBox();
             this.pictureBox_pat_ph = new System.Windows.Forms.PictureBox();
             this.pictureBox_abo_ph = new System.Windows.Forms.PictureBox();
@@ -37,14 +45,6 @@
             this.pictureBox_rt_ph = new System.Windows.Forms.PictureBox();
             this.pictureBox_lb_ph = new System.Windows.Forms.PictureBox();
             this.pictureBox_lt_ph = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.btn_add_sb = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -104,6 +104,79 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(767, 314);
             this.tableLayoutPanel3.TabIndex = 9;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(576, 289);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(121, 12);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "내담자가 좋아한 위치";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(385, 289);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 12);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "모래상자 위쪽";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(194, 289);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 12);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "내담자시점";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 289);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "중앙";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(576, 131);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "우측하단";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(385, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "우측상단";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(194, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "좌측하단";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 131);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "좌측상단";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox_best_ph
             // 
@@ -169,79 +242,6 @@
             this.pictureBox_lt_ph.TabIndex = 0;
             this.pictureBox_lt_ph.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 131);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "좌측상단";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(194, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "좌측하단";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(385, 131);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "우측상단";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(576, 131);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "우측하단";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 289);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 12);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "중앙";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(194, 289);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 12);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "내담자시점";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(385, 289);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 12);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "모래상자 위쪽";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(576, 289);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(121, 12);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "내담자가 좋아한 위치";
-            // 
             // btn_add_sb
             // 
             this.btn_add_sb.Location = new System.Drawing.Point(358, 432);
@@ -250,6 +250,7 @@
             this.btn_add_sb.TabIndex = 10;
             this.btn_add_sb.Text = "등록";
             this.btn_add_sb.UseVisualStyleBackColor = true;
+            this.btn_add_sb.Click += new System.EventHandler(this.btn_add_sb_Click);
             // 
             // label9
             // 
