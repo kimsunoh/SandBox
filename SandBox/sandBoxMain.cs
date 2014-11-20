@@ -20,12 +20,17 @@ namespace SandBox
     public partial class sandBoxMain : Form
     {
         private String selectedSex;
-
+        private String fignum;
+        
         public sandBoxMain()
         {
             InitializeComponent();
+            findFigure.toform1 += new toForm1(listView_select);
         }
-        
+        void listView_select(string fignum)
+        {
+            this.fignum = fignum;
+        }
         private void sandBoxMain_Load(object sender, EventArgs e)
         {
             MessageBox.Show(" Welcome! - id : " + Session.curSession.id);
@@ -169,7 +174,13 @@ namespace SandBox
 
         private void btn_find_fig_Click(object sender, EventArgs e)
         {
-                find_fig();
+            find_fig();
+            view_fig_imfor();
+        }
+
+        private void view_fig_imfor()
+        {
+            //throw new System.NotImplementedException();
         }
 
         private void find_fig()
@@ -265,6 +276,11 @@ namespace SandBox
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_search_fig_TextChanged(object sender, System.EventArgs e)
         {
 
         }

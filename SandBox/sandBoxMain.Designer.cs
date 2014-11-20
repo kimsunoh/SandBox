@@ -73,6 +73,7 @@
             this.rd_sex_fem = new System.Windows.Forms.RadioButton();
             this.rd_sex_man = new System.Windows.Forms.RadioButton();
             this.textbox_feat = new System.Windows.Forms.TextBox();
+            this.textBox_age = new System.Windows.Forms.TextBox();
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -91,7 +92,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox_age = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage_add_fig.SuspendLayout();
@@ -492,6 +492,7 @@
             this.tb_search_fig.Name = "tb_search_fig";
             this.tb_search_fig.Size = new System.Drawing.Size(178, 21);
             this.tb_search_fig.TabIndex = 36;
+            this.tb_search_fig.TextChanged += new System.EventHandler(this.tb_search_fig_TextChanged);
             // 
             // pictureBox_view_fig
             // 
@@ -713,6 +714,13 @@
             this.textbox_feat.Size = new System.Drawing.Size(182, 120);
             this.textbox_feat.TabIndex = 7;
             // 
+            // textBox_age
+            // 
+            this.textBox_age.Location = new System.Drawing.Point(274, 126);
+            this.textBox_age.Name = "textBox_age";
+            this.textBox_age.Size = new System.Drawing.Size(100, 21);
+            this.textBox_age.TabIndex = 5;
+            // 
             // textBox_name
             // 
             this.textBox_name.Location = new System.Drawing.Point(274, 85);
@@ -888,13 +896,6 @@
             this.label20.Size = new System.Drawing.Size(29, 12);
             this.label20.TabIndex = 0;
             this.label20.Text = "이름";
-            // 
-            // textBox_age
-            // 
-            this.textBox_age.Location = new System.Drawing.Point(274, 126);
-            this.textBox_age.Name = "textBox_age";
-            this.textBox_age.Size = new System.Drawing.Size(100, 21);
-            this.textBox_age.TabIndex = 5;
             // 
             // sandBoxMain
             // 
