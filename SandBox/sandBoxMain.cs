@@ -273,23 +273,14 @@ namespace SandBox
     {
         internal static string ToUtf8(string utf8String)
         {
-            //           throw new System.NotImplementedException();
-            string propEncodeString = string.Empty;
-
-            byte[] utf8_Bytes = new byte[utf8String.Length];
-            for (int i = 0; i < utf8String.Length; ++i)
-            {
-                utf8_Bytes[i] = (byte)utf8String[i];
-            }
-
-            return Encoding.UTF8.GetString(utf8_Bytes, 0, utf8_Bytes.Length);
+            byte[] buffer = Encoding.Unicode.GetBytes(utf8String);
+            return Convert.ToBase64String(buffer);
         }
 
         internal static object FromUtf8(string utf8_String)
         {
-            byte[] bytes = Encoding.Default.GetBytes(utf8_String);
-            utf8_String = Encoding.UTF8.GetString(bytes);
-            return utf8_String;
+            byte[] buffer = Convert.FromBase64String(utf8_String);
+            return Encoding.Unicode.GetString(buffer);
         }
     }
 }
