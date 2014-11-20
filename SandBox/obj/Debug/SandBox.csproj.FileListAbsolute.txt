@@ -15,3 +15,4 @@
 \\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\obj\Debug\SandBox.csproj.GenerateResource.Cache
 \\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\obj\Debug\SandBox.exe
 \\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\obj\Debug\SandBox.pdb
+\\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\obj\Debug\SandBox.findFigure.resources

@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="findFigure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="findFigure.Designer.cs">
+      <DependentUpon>findFigure.cs</DependentUpon>
+    </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="DBFactory.cs" />
     <Compile Include="counsel.cs">
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Add_Sandbox.resx">
       <DependentUpon>Add_Sandbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="findFigure.resx">
+      <DependentUpon>findFigure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

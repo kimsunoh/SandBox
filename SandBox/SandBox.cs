@@ -32,7 +32,6 @@ namespace SandBox
             {
                 MessageBox.Show("Login failed.");
             }
-            
         }
 
         private void OnSubFormClosed(object sender, FormClosedEventArgs e)

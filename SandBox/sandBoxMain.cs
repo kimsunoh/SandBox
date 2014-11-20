@@ -155,35 +155,26 @@ namespace SandBox
                     + @" TB_FIGURE (FIG_NUM,IMAGE,CATEGORY,DIVISION,SECTION,SYMBOL)"
                     + @"VALUES"
                     + @"('" + (new Random()).Next(1000000000) 
-                    + "','" 
-                    + ToUtf8(tb_img_path.Text) + "','"
-                    + ToUtf8(comboBox_add_cate.Text) + "','"
-                    + ToUtf8(comboBox_add_div.Text) + "','"
-                    + ToUtf8(comboBox_add_sel.Text) + "','"
-                    + ToUtf8(textBox_add_sym.Text) + "')"
+                    + "','"
+                    + utfEncoding.ToUtf8(tb_img_path.Text) + "','"
+                    + utfEncoding.ToUtf8(comboBox_add_cate.Text) + "','"
+                    + utfEncoding.ToUtf8(comboBox_add_div.Text) + "','"
+                    + utfEncoding.ToUtf8(comboBox_add_sel.Text) + "','"
+                    + utfEncoding.ToUtf8(textBox_add_sym.Text) + "')"
                 );
                 fs.Close();
                 return true;
             }
         }
 
-        private string ToUtf8(string utf8String)
-        {
- //           throw new System.NotImplementedException();
-            string propEncodeString = string.Empty;
-
-            byte[] utf8_Bytes = new byte[utf8String.Length];
-            for (int i = 0; i < utf8String.Length; ++i)
-            {
-                utf8_Bytes[i] = (byte)utf8String[i];
-            }
-
-            return Encoding.UTF8.GetString(utf8_Bytes, 0, utf8_Bytes.Length);
-        }
-
         private void btn_find_fig_Click(object sender, EventArgs e)
         {
+                find_fig();
+        }
 
+        private void find_fig()
+        {
+            (new findFigure()).Show();
         }
 
         private void btn_amend_fig_Click(object sender, EventArgs e)
@@ -234,10 +225,10 @@ namespace SandBox
                     + @"VALUES"
                     + @"('" + Session.curSession.id + "','"
                     + (new Random()).Next(1000000000) + "','"
-                    + ToUtf8(textBox_name.Text) + "','"
+                    + utfEncoding.ToUtf8(textBox_name.Text) + "','"
                     + int.Parse(textBox_age.Text) + "','"
-                    + ToUtf8(this.selectedSex) + "','"
-                    + ToUtf8(textbox_feat.Text) + "')"
+                    + utfEncoding.ToUtf8(this.selectedSex) + "','"
+                    + utfEncoding.ToUtf8(textbox_feat.Text) + "')"
                 );
                 return true;
             }
@@ -276,6 +267,29 @@ namespace SandBox
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+    }
+    class utfEncoding
+    {
+        internal static string ToUtf8(string utf8String)
+        {
+            //           throw new System.NotImplementedException();
+            string propEncodeString = string.Empty;
+
+            byte[] utf8_Bytes = new byte[utf8String.Length];
+            for (int i = 0; i < utf8String.Length; ++i)
+            {
+                utf8_Bytes[i] = (byte)utf8String[i];
+            }
+
+            return Encoding.UTF8.GetString(utf8_Bytes, 0, utf8_Bytes.Length);
+        }
+
+        internal static object FromUtf8(string utf8_String)
+        {
+            byte[] bytes = Encoding.Default.GetBytes(utf8_String);
+            utf8_String = Encoding.UTF8.GetString(bytes);
+            return utf8_String;
         }
     }
 }
