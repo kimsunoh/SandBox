@@ -31,9 +31,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox_sec = new System.Windows.Forms.ComboBox();
-            this.comboBox_view_div = new System.Windows.Forms.ComboBox();
-            this.comboBox_view_cate = new System.Windows.Forms.ComboBox();
+            this.comboBox_finfig_sec = new System.Windows.Forms.ComboBox();
+            this.comboBox_finfig_div = new System.Windows.Forms.ComboBox();
+            this.comboBox_finfig_cate = new System.Windows.Forms.ComboBox();
             this.btn_search_fig = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListBox();
             this.btn_select_fig = new System.Windows.Forms.Button();
@@ -66,10 +66,10 @@
             this.label10.TabIndex = 37;
             this.label10.Text = "대분류";
             // 
-            // comboBox_sec
+            // comboBox_finfig_sec
             // 
-            this.comboBox_sec.FormattingEnabled = true;
-            this.comboBox_sec.Items.AddRange(new object[] {
+            this.comboBox_finfig_sec.FormattingEnabled = true;
+            this.comboBox_finfig_sec.Items.AddRange(new object[] {
             "친구",
             "부부",
             "가족",
@@ -112,15 +112,15 @@
             "총",
             "대포",
             "장갑차"});
-            this.comboBox_sec.Location = new System.Drawing.Point(269, 46);
-            this.comboBox_sec.Name = "comboBox_sec";
-            this.comboBox_sec.Size = new System.Drawing.Size(121, 20);
-            this.comboBox_sec.TabIndex = 36;
+            this.comboBox_finfig_sec.Location = new System.Drawing.Point(269, 46);
+            this.comboBox_finfig_sec.Name = "comboBox_finfig_sec";
+            this.comboBox_finfig_sec.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_finfig_sec.TabIndex = 36;
             // 
-            // comboBox_view_div
+            // comboBox_finfig_div
             // 
-            this.comboBox_view_div.FormattingEnabled = true;
-            this.comboBox_view_div.Items.AddRange(new object[] {
+            this.comboBox_finfig_div.FormattingEnabled = true;
+            this.comboBox_finfig_div.Items.AddRange(new object[] {
             "역사적인물",
             "취미",
             "직업",
@@ -184,15 +184,15 @@
             "술",
             "병원용품",
             "무기"});
-            this.comboBox_view_div.Location = new System.Drawing.Point(141, 46);
-            this.comboBox_view_div.Name = "comboBox_view_div";
-            this.comboBox_view_div.Size = new System.Drawing.Size(121, 20);
-            this.comboBox_view_div.TabIndex = 35;
+            this.comboBox_finfig_div.Location = new System.Drawing.Point(141, 46);
+            this.comboBox_finfig_div.Name = "comboBox_finfig_div";
+            this.comboBox_finfig_div.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_finfig_div.TabIndex = 35;
             // 
-            // comboBox_view_cate
+            // comboBox_finfig_cate
             // 
-            this.comboBox_view_cate.FormattingEnabled = true;
-            this.comboBox_view_cate.Items.AddRange(new object[] {
+            this.comboBox_finfig_cate.FormattingEnabled = true;
+            this.comboBox_finfig_cate.Items.AddRange(new object[] {
             "인간과 관련된 물건",
             "동물",
             "건물",
@@ -205,10 +205,10 @@
             "초목",
             "조경과 전시물",
             "기타품"});
-            this.comboBox_view_cate.Location = new System.Drawing.Point(13, 47);
-            this.comboBox_view_cate.Name = "comboBox_view_cate";
-            this.comboBox_view_cate.Size = new System.Drawing.Size(121, 20);
-            this.comboBox_view_cate.TabIndex = 34;
+            this.comboBox_finfig_cate.Location = new System.Drawing.Point(13, 47);
+            this.comboBox_finfig_cate.Name = "comboBox_finfig_cate";
+            this.comboBox_finfig_cate.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_finfig_cate.TabIndex = 34;
             // 
             // btn_search_fig
             // 
@@ -250,9 +250,9 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox_sec);
-            this.Controls.Add(this.comboBox_view_div);
-            this.Controls.Add(this.comboBox_view_cate);
+            this.Controls.Add(this.comboBox_finfig_sec);
+            this.Controls.Add(this.comboBox_finfig_div);
+            this.Controls.Add(this.comboBox_finfig_cate);
             this.Name = "findFigure";
             this.Text = "findFigure";
             this.ResumeLayout(false);
@@ -265,9 +265,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox_sec;
-        private System.Windows.Forms.ComboBox comboBox_view_div;
-        private System.Windows.Forms.ComboBox comboBox_view_cate;
+        private System.Windows.Forms.ComboBox comboBox_finfig_sec;
+        private System.Windows.Forms.ComboBox comboBox_finfig_div;
+        private System.Windows.Forms.ComboBox comboBox_finfig_cate;
         private System.Windows.Forms.Button btn_search_fig;
         private System.Windows.Forms.ListBox listView1;
         private System.Windows.Forms.Button btn_select_fig;

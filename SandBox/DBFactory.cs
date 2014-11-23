@@ -17,6 +17,7 @@ namespace SandBox
             try
             {
                 DataSet ds = new DataSet();
+                Console.WriteLine(query);
                 var adpt = new SQLiteDataAdapter(query, connStr);
                 adpt.Fill(ds);
                 return ds;

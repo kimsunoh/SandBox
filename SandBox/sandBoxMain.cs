@@ -21,15 +21,40 @@ namespace SandBox
     {
         private String selectedSex;
         private String fignum;
+        private String patnum;
         
         public sandBoxMain()
         {
             InitializeComponent();
-            findFigure.toform1 += new toForm1(listView_select);
+            findFigure.toform1 += new toForm1(listView_select_fig);
+            search_Patient.toform2 += new toForm2(listView_select_pat);
         }
-        void listView_select(string fignum)
+
+        private void listView_select_pat(string patnum)
+        {
+            this.patnum = patnum;
+            view_pat_infor();
+        }
+
+        private void view_pat_infor()
+        {
+            //throw new System.NotImplementedException();
+            DataSet ds = DBFactory.ExcuteQuery(
+                                @"SELECT * FROM TB_PATIENT WHERE PAT_NUM = "
+                                + "'" + patnum + "'"
+                            );
+
+            //IDX,PAT_NUM,PAT_NAME,PAT_AGE,PAT_SEX,PAT_FEATURE
+            string patName = ds.Tables[0].Rows[0][2].ToString(); //Image
+            patName = utfEncoding.FromUtf8(patName);
+            //text를 표시한다
+            view_pat_name.Visible = true;
+            view_pat_name.Text = patName;
+        }
+        void listView_select_fig(string fignum)
         {
             this.fignum = fignum;
+            view_fig_imfor();
         }
         private void sandBoxMain_Load(object sender, EventArgs e)
         {
@@ -175,17 +200,30 @@ namespace SandBox
         private void btn_find_fig_Click(object sender, EventArgs e)
         {
             find_fig();
-            view_fig_imfor();
         }
 
         private void view_fig_imfor()
         {
             //throw new System.NotImplementedException();
+            DataSet ds = DBFactory.ExcuteQuery(
+                                @"SELECT * FROM TB_FIGURE WHERE FIG_NUM = "
+                                + "'" + fignum + "'"
+                            );
+
+            //FIG_NUM,IMAGE,CATEGORY,DIVISION,SECTION,SYMBOL
+            string imgAdd = ds.Tables[0].Rows[0][1].ToString(); //Image
+            imgAdd = utfEncoding.FromUtf8(imgAdd);
+            //이미지의 크기를 PictureBox에 맞춘다
+            pictureBox_view_fig.SizeMode = PictureBoxSizeMode.StretchImage;
+            //이미지를 표시한다
+            pictureBox_view_fig.Image = System.Drawing.Image.FromFile(imgAdd);
         }
 
-        private void find_fig()
+        private findFigure find_fig()
         {
-            (new findFigure()).Show();
+            findFigure ff = new findFigure();
+            ff.Show();
+            return ff;
         }
 
         private void btn_amend_fig_Click(object sender, EventArgs e)
@@ -247,7 +285,14 @@ namespace SandBox
 
         private void btn_pat_search_Click(object sender, EventArgs e)
         {
+            find_pat();
+        }
 
+        private search_Patient find_pat()
+        {
+            search_Patient sp = new search_Patient();
+            sp.Show();
+            return sp;
         }
 
         private void btn_view_coun_Click(object sender, EventArgs e)
@@ -293,7 +338,7 @@ namespace SandBox
             return Convert.ToBase64String(buffer);
         }
 
-        internal static object FromUtf8(string utf8_String)
+        internal static string FromUtf8(string utf8_String)
         {
             byte[] buffer = Convert.FromBase64String(utf8_String);
             return Encoding.Unicode.GetString(buffer);

@@ -185,6 +185,7 @@
             this.pictureBox_best_ph.Size = new System.Drawing.Size(185, 121);
             this.pictureBox_best_ph.TabIndex = 7;
             this.pictureBox_best_ph.TabStop = false;
+            this.pictureBox_best_ph.Click += new System.EventHandler(this.pictureBox_best_ph_Click);
             // 
             // pictureBox_pat_ph
             // 
@@ -193,6 +194,7 @@
             this.pictureBox_pat_ph.Size = new System.Drawing.Size(185, 121);
             this.pictureBox_pat_ph.TabIndex = 6;
             this.pictureBox_pat_ph.TabStop = false;
+            this.pictureBox_pat_ph.Click += new System.EventHandler(this.pictureBox_pat_ph_Click);
             // 
             // pictureBox_abo_ph
             // 
@@ -201,6 +203,7 @@
             this.pictureBox_abo_ph.Size = new System.Drawing.Size(185, 121);
             this.pictureBox_abo_ph.TabIndex = 5;
             this.pictureBox_abo_ph.TabStop = false;
+            this.pictureBox_abo_ph.Click += new System.EventHandler(this.pictureBox_abo_ph_Click);
             // 
             // pictureBox_cen_ph
             // 
@@ -209,6 +212,7 @@
             this.pictureBox_cen_ph.Size = new System.Drawing.Size(185, 121);
             this.pictureBox_cen_ph.TabIndex = 4;
             this.pictureBox_cen_ph.TabStop = false;
+            this.pictureBox_cen_ph.Click += new System.EventHandler(this.pictureBox_cen_ph_Click);
             // 
             // pictureBox_rb_ph
             // 
@@ -217,6 +221,7 @@
             this.pictureBox_rb_ph.Size = new System.Drawing.Size(185, 121);
             this.pictureBox_rb_ph.TabIndex = 3;
             this.pictureBox_rb_ph.TabStop = false;
+            this.pictureBox_rb_ph.Click += new System.EventHandler(this.pictureBox_rb_ph_Click);
             // 
             // pictureBox_rt_ph
             // 
@@ -225,6 +230,7 @@
             this.pictureBox_rt_ph.Size = new System.Drawing.Size(185, 121);
             this.pictureBox_rt_ph.TabIndex = 2;
             this.pictureBox_rt_ph.TabStop = false;
+            this.pictureBox_rt_ph.Click += new System.EventHandler(this.pictureBox_rt_ph_Click);
             // 
             // pictureBox_lb_ph
             // 
@@ -233,6 +239,7 @@
             this.pictureBox_lb_ph.Size = new System.Drawing.Size(185, 121);
             this.pictureBox_lb_ph.TabIndex = 1;
             this.pictureBox_lb_ph.TabStop = false;
+            this.pictureBox_lb_ph.Click += new System.EventHandler(this.pictureBox_lb_ph_Click);
             // 
             // pictureBox_lt_ph
             // 
@@ -241,6 +248,7 @@
             this.pictureBox_lt_ph.Size = new System.Drawing.Size(185, 121);
             this.pictureBox_lt_ph.TabIndex = 0;
             this.pictureBox_lt_ph.TabStop = false;
+            this.pictureBox_lt_ph.Click += new System.EventHandler(this.pictureBox_lt_ph_Click);
             // 
             // btn_add_sb
             // 
@@ -278,6 +286,7 @@
             this.btn_search_fi_fig.TabIndex = 13;
             this.btn_search_fi_fig.Text = "검색";
             this.btn_search_fi_fig.UseVisualStyleBackColor = true;
+            this.btn_search_fi_fig.Click += new System.EventHandler(this.btn_search_fi_fig_Click);
             // 
             // btn_search_la_fig
             // 

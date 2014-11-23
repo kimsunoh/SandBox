@@ -87,11 +87,14 @@
             this.label19 = new System.Windows.Forms.Label();
             this.btn_pat_search = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textbox_view_feat = new System.Windows.Forms.ListView();
+            this.view_pat_feat = new System.Windows.Forms.ListView();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.view_pat_name = new System.Windows.Forms.Label();
+            this.view_pat_age = new System.Windows.Forms.Label();
+            this.view_pat_sex = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage_add_fig.SuspendLayout();
@@ -840,7 +843,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textbox_view_feat);
+            this.groupBox1.Controls.Add(this.view_pat_sex);
+            this.groupBox1.Controls.Add(this.view_pat_age);
+            this.groupBox1.Controls.Add(this.view_pat_name);
+            this.groupBox1.Controls.Add(this.view_pat_feat);
             this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.label21);
@@ -852,14 +858,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // textbox_view_feat
+            // view_pat_feat
             // 
-            this.textbox_view_feat.Location = new System.Drawing.Point(179, 136);
-            this.textbox_view_feat.Name = "textbox_view_feat";
-            this.textbox_view_feat.Size = new System.Drawing.Size(204, 97);
-            this.textbox_view_feat.TabIndex = 4;
-            this.textbox_view_feat.UseCompatibleStateImageBehavior = false;
-            this.textbox_view_feat.SelectedIndexChanged += new System.EventHandler(this.textbox_view_feat_SelectedIndexChanged);
+            this.view_pat_feat.Location = new System.Drawing.Point(179, 136);
+            this.view_pat_feat.Name = "view_pat_feat";
+            this.view_pat_feat.Size = new System.Drawing.Size(204, 97);
+            this.view_pat_feat.TabIndex = 4;
+            this.view_pat_feat.UseCompatibleStateImageBehavior = false;
+            this.view_pat_feat.SelectedIndexChanged += new System.EventHandler(this.textbox_view_feat_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -896,6 +902,36 @@
             this.label20.Size = new System.Drawing.Size(29, 12);
             this.label20.TabIndex = 0;
             this.label20.Text = "이름";
+            // 
+            // view_pat_name
+            // 
+            this.view_pat_name.AutoSize = true;
+            this.view_pat_name.Location = new System.Drawing.Point(177, 37);
+            this.view_pat_name.Name = "view_pat_name";
+            this.view_pat_name.Size = new System.Drawing.Size(44, 12);
+            this.view_pat_name.TabIndex = 5;
+            this.view_pat_name.Text = "label13";
+            this.view_pat_name.Visible = false;
+            // 
+            // view_pat_age
+            // 
+            this.view_pat_age.AutoSize = true;
+            this.view_pat_age.Location = new System.Drawing.Point(179, 73);
+            this.view_pat_age.Name = "view_pat_age";
+            this.view_pat_age.Size = new System.Drawing.Size(44, 12);
+            this.view_pat_age.TabIndex = 6;
+            this.view_pat_age.Text = "label25";
+            this.view_pat_age.Visible = false;
+            // 
+            // view_pat_sex
+            // 
+            this.view_pat_sex.AutoSize = true;
+            this.view_pat_sex.Location = new System.Drawing.Point(179, 109);
+            this.view_pat_sex.Name = "view_pat_sex";
+            this.view_pat_sex.Size = new System.Drawing.Size(44, 12);
+            this.view_pat_sex.TabIndex = 7;
+            this.view_pat_sex.Text = "label27";
+            this.view_pat_sex.Visible = false;
             // 
             // sandBoxMain
             // 
@@ -976,7 +1012,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btn_pat_search;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView textbox_view_feat;
+        private System.Windows.Forms.ListView view_pat_feat;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
@@ -991,6 +1027,9 @@
         private System.Windows.Forms.TextBox tb_search_fig;
         private System.Windows.Forms.TextBox textBox_age;
         private System.Windows.Forms.TextBox textBox_name;
+        private System.Windows.Forms.Label view_pat_sex;
+        private System.Windows.Forms.Label view_pat_age;
+        private System.Windows.Forms.Label view_pat_name;
     }
 }
 
