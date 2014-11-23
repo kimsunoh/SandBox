@@ -255,6 +255,7 @@
             this.Controls.Add(this.comboBox_finfig_cate);
             this.Name = "findFigure";
             this.Text = "findFigure";
+            this.Load += new System.EventHandler(this.findFigure_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

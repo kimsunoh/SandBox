@@ -26,7 +26,6 @@ namespace SandBox
         public sandBoxMain()
         {
             InitializeComponent();
-            findFigure.toform1 += new toForm1(listView_select_fig);
             search_Patient.toform2 += new toForm2(listView_select_pat);
         }
 
@@ -158,6 +157,10 @@ namespace SandBox
             if (Add_Fig())
             {
                 MessageBox.Show("Done.");
+                //추가된 fig이미지를 positive sample 이미지 리스트 테이블에 추가 
+                string strCmdText;
+                strCmdText = @"copy c:\sandBox\a.txt c:\sandBox\b.txt";
+                System.Diagnostics.Process.Start("CMD.exe", "/C " + strCmdText); //cmd에서 기계학습시키기
             }
             else
             {
@@ -222,6 +225,7 @@ namespace SandBox
         private findFigure find_fig()
         {
             findFigure ff = new findFigure();
+            ff.toform1 += new toForm1(listView_select_fig);
             ff.Show();
             return ff;
         }

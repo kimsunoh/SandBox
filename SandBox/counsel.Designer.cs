@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_sb_view = new System.Windows.Forms.Button();
@@ -78,6 +77,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.coun_pat_name = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -117,7 +117,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.coun_pat_name);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label10);
@@ -129,15 +129,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "치료내역관리";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(205, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1
             // 
@@ -157,7 +148,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.tableLayoutPanel5.Controls.Add(this.btn_sb_view, 6, 0);
             this.tableLayoutPanel5.Controls.Add(this.pictureBox3, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.textBox2, 2, 0);
@@ -173,7 +164,7 @@
             // 
             // btn_sb_view
             // 
-            this.btn_sb_view.Location = new System.Drawing.Point(653, 3);
+            this.btn_sb_view.Location = new System.Drawing.Point(652, 3);
             this.btn_sb_view.Name = "btn_sb_view";
             this.btn_sb_view.Size = new System.Drawing.Size(67, 23);
             this.btn_sb_view.TabIndex = 0;
@@ -184,20 +175,20 @@
             // 
             this.pictureBox3.Location = new System.Drawing.Point(57, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(120, 94);
+            this.pictureBox3.Size = new System.Drawing.Size(119, 94);
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(183, 3);
+            this.textBox2.Location = new System.Drawing.Point(182, 3);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(157, 21);
             this.textBox2.TabIndex = 2;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(346, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(345, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(117, 94);
             this.pictureBox4.TabIndex = 3;
@@ -205,7 +196,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(469, 3);
+            this.pictureBox5.Location = new System.Drawing.Point(468, 3);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(92, 94);
             this.pictureBox5.TabIndex = 4;
@@ -213,7 +204,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(569, 3);
+            this.textBox3.Location = new System.Drawing.Point(568, 3);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(78, 21);
             this.textBox3.TabIndex = 5;
@@ -246,7 +237,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label4, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label5, 2, 0);
@@ -272,7 +263,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 0);
+            this.label4.Location = new System.Drawing.Point(57, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 12);
             this.label4.TabIndex = 1;
@@ -281,7 +272,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(181, 0);
+            this.label5.Location = new System.Drawing.Point(180, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 12);
             this.label5.TabIndex = 2;
@@ -290,7 +281,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(344, 0);
+            this.label6.Location = new System.Drawing.Point(343, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 12);
             this.label6.TabIndex = 3;
@@ -299,7 +290,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(467, 0);
+            this.label7.Location = new System.Drawing.Point(466, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 12);
             this.label7.TabIndex = 4;
@@ -308,7 +299,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(567, 0);
+            this.label8.Location = new System.Drawing.Point(566, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 12);
             this.label8.TabIndex = 5;
@@ -625,6 +616,16 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "첫번째 피규어";
             // 
+            // coun_pat_name
+            // 
+            this.coun_pat_name.AutoSize = true;
+            this.coun_pat_name.Location = new System.Drawing.Point(205, 28);
+            this.coun_pat_name.Name = "coun_pat_name";
+            this.coun_pat_name.Size = new System.Drawing.Size(44, 12);
+            this.coun_pat_name.TabIndex = 4;
+            this.coun_pat_name.Text = "label25";
+            this.coun_pat_name.Visible = false;
+            // 
             // counsel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -712,12 +713,12 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_sb_view;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label coun_pat_name;
     }
 }

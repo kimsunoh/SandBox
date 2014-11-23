@@ -74,6 +74,7 @@
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel3.ColumnCount = 4;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -108,7 +109,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(576, 289);
+            this.label8.Location = new System.Drawing.Point(577, 287);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(121, 12);
             this.label8.TabIndex = 17;
@@ -117,7 +118,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(385, 289);
+            this.label7.Location = new System.Drawing.Point(386, 287);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 12);
             this.label7.TabIndex = 16;
@@ -126,7 +127,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(194, 289);
+            this.label6.Location = new System.Drawing.Point(195, 287);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 12);
             this.label6.TabIndex = 15;
@@ -135,7 +136,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 289);
+            this.label5.Location = new System.Drawing.Point(4, 287);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 14;
@@ -144,7 +145,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(576, 131);
+            this.label4.Location = new System.Drawing.Point(577, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 13;
@@ -153,7 +154,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(385, 131);
+            this.label3.Location = new System.Drawing.Point(386, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 12;
@@ -162,7 +163,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(194, 131);
+            this.label2.Location = new System.Drawing.Point(195, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 11;
@@ -171,7 +172,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 131);
+            this.label1.Location = new System.Drawing.Point(4, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 10;
@@ -180,7 +181,8 @@
             // 
             // pictureBox_best_ph
             // 
-            this.pictureBox_best_ph.Location = new System.Drawing.Point(576, 161);
+            this.pictureBox_best_ph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_best_ph.Location = new System.Drawing.Point(577, 161);
             this.pictureBox_best_ph.Name = "pictureBox_best_ph";
             this.pictureBox_best_ph.Size = new System.Drawing.Size(185, 121);
             this.pictureBox_best_ph.TabIndex = 7;
@@ -189,34 +191,38 @@
             // 
             // pictureBox_pat_ph
             // 
-            this.pictureBox_pat_ph.Location = new System.Drawing.Point(385, 161);
+            this.pictureBox_pat_ph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_pat_ph.Location = new System.Drawing.Point(386, 161);
             this.pictureBox_pat_ph.Name = "pictureBox_pat_ph";
-            this.pictureBox_pat_ph.Size = new System.Drawing.Size(185, 121);
+            this.pictureBox_pat_ph.Size = new System.Drawing.Size(184, 121);
             this.pictureBox_pat_ph.TabIndex = 6;
             this.pictureBox_pat_ph.TabStop = false;
             this.pictureBox_pat_ph.Click += new System.EventHandler(this.pictureBox_pat_ph_Click);
             // 
             // pictureBox_abo_ph
             // 
-            this.pictureBox_abo_ph.Location = new System.Drawing.Point(194, 161);
+            this.pictureBox_abo_ph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_abo_ph.Location = new System.Drawing.Point(195, 161);
             this.pictureBox_abo_ph.Name = "pictureBox_abo_ph";
-            this.pictureBox_abo_ph.Size = new System.Drawing.Size(185, 121);
+            this.pictureBox_abo_ph.Size = new System.Drawing.Size(184, 121);
             this.pictureBox_abo_ph.TabIndex = 5;
             this.pictureBox_abo_ph.TabStop = false;
             this.pictureBox_abo_ph.Click += new System.EventHandler(this.pictureBox_abo_ph_Click);
             // 
             // pictureBox_cen_ph
             // 
-            this.pictureBox_cen_ph.Location = new System.Drawing.Point(3, 161);
+            this.pictureBox_cen_ph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_cen_ph.Location = new System.Drawing.Point(4, 161);
             this.pictureBox_cen_ph.Name = "pictureBox_cen_ph";
-            this.pictureBox_cen_ph.Size = new System.Drawing.Size(185, 121);
+            this.pictureBox_cen_ph.Size = new System.Drawing.Size(184, 121);
             this.pictureBox_cen_ph.TabIndex = 4;
             this.pictureBox_cen_ph.TabStop = false;
             this.pictureBox_cen_ph.Click += new System.EventHandler(this.pictureBox_cen_ph_Click);
             // 
             // pictureBox_rb_ph
             // 
-            this.pictureBox_rb_ph.Location = new System.Drawing.Point(576, 3);
+            this.pictureBox_rb_ph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_rb_ph.Location = new System.Drawing.Point(577, 4);
             this.pictureBox_rb_ph.Name = "pictureBox_rb_ph";
             this.pictureBox_rb_ph.Size = new System.Drawing.Size(185, 121);
             this.pictureBox_rb_ph.TabIndex = 3;
@@ -225,27 +231,30 @@
             // 
             // pictureBox_rt_ph
             // 
-            this.pictureBox_rt_ph.Location = new System.Drawing.Point(385, 3);
+            this.pictureBox_rt_ph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_rt_ph.Location = new System.Drawing.Point(386, 4);
             this.pictureBox_rt_ph.Name = "pictureBox_rt_ph";
-            this.pictureBox_rt_ph.Size = new System.Drawing.Size(185, 121);
+            this.pictureBox_rt_ph.Size = new System.Drawing.Size(184, 121);
             this.pictureBox_rt_ph.TabIndex = 2;
             this.pictureBox_rt_ph.TabStop = false;
             this.pictureBox_rt_ph.Click += new System.EventHandler(this.pictureBox_rt_ph_Click);
             // 
             // pictureBox_lb_ph
             // 
-            this.pictureBox_lb_ph.Location = new System.Drawing.Point(194, 3);
+            this.pictureBox_lb_ph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_lb_ph.Location = new System.Drawing.Point(195, 4);
             this.pictureBox_lb_ph.Name = "pictureBox_lb_ph";
-            this.pictureBox_lb_ph.Size = new System.Drawing.Size(185, 121);
+            this.pictureBox_lb_ph.Size = new System.Drawing.Size(184, 121);
             this.pictureBox_lb_ph.TabIndex = 1;
             this.pictureBox_lb_ph.TabStop = false;
             this.pictureBox_lb_ph.Click += new System.EventHandler(this.pictureBox_lb_ph_Click);
             // 
             // pictureBox_lt_ph
             // 
-            this.pictureBox_lt_ph.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox_lt_ph.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_lt_ph.Location = new System.Drawing.Point(4, 4);
             this.pictureBox_lt_ph.Name = "pictureBox_lt_ph";
-            this.pictureBox_lt_ph.Size = new System.Drawing.Size(185, 121);
+            this.pictureBox_lt_ph.Size = new System.Drawing.Size(184, 121);
             this.pictureBox_lt_ph.TabIndex = 0;
             this.pictureBox_lt_ph.TabStop = false;
             this.pictureBox_lt_ph.Click += new System.EventHandler(this.pictureBox_lt_ph_Click);
@@ -284,7 +293,7 @@
             this.btn_search_fi_fig.Name = "btn_search_fi_fig";
             this.btn_search_fi_fig.Size = new System.Drawing.Size(75, 23);
             this.btn_search_fi_fig.TabIndex = 13;
-            this.btn_search_fi_fig.Text = "검색";
+            this.btn_search_fi_fig.Text = "찾기";
             this.btn_search_fi_fig.UseVisualStyleBackColor = true;
             this.btn_search_fi_fig.Click += new System.EventHandler(this.btn_search_fi_fig_Click);
             // 
@@ -294,8 +303,9 @@
             this.btn_search_la_fig.Name = "btn_search_la_fig";
             this.btn_search_la_fig.Size = new System.Drawing.Size(75, 23);
             this.btn_search_la_fig.TabIndex = 14;
-            this.btn_search_la_fig.Text = "검색";
+            this.btn_search_la_fig.Text = "찾기";
             this.btn_search_la_fig.UseVisualStyleBackColor = true;
+            this.btn_search_la_fig.Click += new System.EventHandler(this.btn_search_la_fig_Click);
             // 
             // textBox_fi_fig
             // 
@@ -313,6 +323,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 0);
@@ -328,7 +339,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 0);
+            this.label11.Location = new System.Drawing.Point(4, 1);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(105, 12);
             this.label11.TabIndex = 0;
@@ -336,10 +347,10 @@
             // 
             // textBox_counsel_story
             // 
-            this.textBox_counsel_story.Location = new System.Drawing.Point(3, 21);
+            this.textBox_counsel_story.Location = new System.Drawing.Point(4, 20);
             this.textBox_counsel_story.Multiline = true;
             this.textBox_counsel_story.Name = "textBox_counsel_story";
-            this.textBox_counsel_story.Size = new System.Drawing.Size(346, 53);
+            this.textBox_counsel_story.Size = new System.Drawing.Size(344, 53);
             this.textBox_counsel_story.TabIndex = 1;
             // 
             // label12

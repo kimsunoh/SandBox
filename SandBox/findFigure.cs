@@ -16,7 +16,7 @@ namespace SandBox
 
     public partial class findFigure : Form
     {
-        public static event toForm1 toform1; //이벤트 등록
+        public event toForm1 toform1; //이벤트 등록
 
         private List<string> fignumList;
         public findFigure()
@@ -54,6 +54,11 @@ namespace SandBox
                 //Application.OpenForms["findFigure"].Close();
             }
             Close();
+        }
+
+        private void findFigure_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
