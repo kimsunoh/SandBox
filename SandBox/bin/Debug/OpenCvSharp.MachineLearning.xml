@@ -1,0 +1,2522 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "OpenCvSharp.MachineLearning"
+    </assembly>
+    <members>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.Read(OpenCvSharp.CvFileStorage,OpenCvSharp.CvFileNode)">
+            <summary>
+파일 스토리지로부터 모델을 읽어들인다
+</summary>
+            <param name="storage" />
+            <param name="node" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.Write(OpenCvSharp.CvFileStorage,System.String)">
+            <summary>
+모델을 파일에 쓴다
+</summary>
+            <param name="storage" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.Load(System.String,System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.Load(System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.Save(System.String,System.String)">
+            <summary>
+모델을 파일에 저장한다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.Save(System.String)">
+            <summary>
+모델을 파일에 저장한다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.Clear">
+            <summary>
+메모리를 해제해, 모델 상태를 리셋 한다
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.FindNearest(OpenCvSharp.CvMat,System.Int32,OpenCvSharp.CvMat,System.Single[][],OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+입력 벡터의 이웃을 찾는다
+</summary>
+            <param name="samples">기존의 샘플 (l*n)</param>
+            <param name="k">탐색하는 이웃 수의 최대수</param>
+            <param name="results" />
+            <param name="neighbors" />
+            <param name="neighbor_responses">각각의 샘플의 이웃 (l*k)</param>
+            <param name="dist">샘플로부터 이웃까지의 거리</param>
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,System.Boolean,System.Int32,System.Boolean)">
+            <summary>
+모델의 학습
+</summary>
+            <param name="train_data">기존의 샘플 (m*n)</param>
+            <param name="responses">기존의 샘플의 클래스 (m*1)</param>
+            <param name="sample_idx" />
+            <param name="is_regression" />
+            <param name="max_k">FindNearest에게 건네지는 이웃의 최대수</param>
+            <param name="update_base">모델을 기존에 추가(false)할것인지, 새로운 교사 데이터를 사용해 갱신할(true)것인지</param>
+            <returns />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvKNearest.CvPtr">
+            <summary>
+Data pointer (CvKNearest*)
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.Finalize">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.Dispose">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.#ctor(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,System.Boolean,System.Int32)">
+            <summary>
+학습 실시 초기화
+</summary>
+            <param name="train_data">기존의 샘플 (m*n)</param>
+            <param name="responses">기존의 샘플의 클래스 (m*1)</param>
+            <param name="sample_idx" />
+            <param name="is_regression" />
+            <param name="max_k">FindNearest에게 건네지는 이웃의 최대치</param>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvKNearest.#ctor">
+            <summary>
+초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvKNearest.SizeOf">
+            <summary>
+sizeof(CvKNearest)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvKNearest">
+            <summary>
+K근접법 이웃 분류
+</summary>
+        </member>
+        <member name="D:size_t">
+(C) 2008-2009 Schima
+This code is licenced under the LGPL.
+
+</member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Read(OpenCvSharp.CvFileStorage,OpenCvSharp.CvFileNode)">
+            <summary>
+파일 스토리지로부터 모델을 읽어들인다
+</summary>
+            <param name="storage" />
+            <param name="node" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Write(OpenCvSharp.CvFileStorage,System.String)">
+            <summary>
+모델을 파일에 쓴다
+</summary>
+            <param name="storage" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Load(System.String,System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Load(System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Save(System.String,System.String)">
+            <summary>
+모델을 파일에 보존한다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Save(System.String)">
+            <summary>
+모델을 파일에 보존한다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Clear">
+            <summary>
+메모리를 해제해, 모델 상태를 리셋트 한다
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.GetTreeCount">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.GetRng">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.GetActiveVarMask">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.GetProximity(OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+두 개의 학습 샘플간의 근사치를 꺼낸다
+</summary>
+            <param name="sample_1" />
+            <param name="sample_2" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.GetVarImportance">
+            <summary>
+변수의 중요도를 나타내는 배열을 취득한다
+</summary>
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Predict(OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+입력 샘플에 대한 출력을 예측한다
+</summary>
+            <param name="sample" />
+            <param name="missing" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Predict(OpenCvSharp.CvMat)">
+            <summary>
+입력 샘플에 대한 출력을 예측한다
+</summary>
+            <param name="sample" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Train(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvRTParams)">
+            <summary>
+랜덤 트리 모델의 학습
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="comp_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+            <param name="params" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Train(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+랜덤 트리 모델의 학습
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="comp_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Train(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat)">
+            <summary>
+랜덤 트리 모델의 학습
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <returns />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvRTrees.CvPtr">
+            <summary>
+데이타 포인터 (CvRTrees*)
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Finalize">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.Dispose">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTrees.#ctor">
+            <summary>
+디폴트 초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvRTrees.SizeOf">
+            <summary>
+sizeof(CvRTrees)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvRTrees">
+            <summary>
+랜덤 트리 클래스
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Read(OpenCvSharp.CvFileStorage,OpenCvSharp.CvFileNode)">
+            <summary>
+파일 스토리지로부터 모델을 읽어들인다
+</summary>
+            <param name="storage" />
+            <param name="node" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Write(OpenCvSharp.CvFileStorage,System.String)">
+            <summary>
+모델을 파일에 쓴다
+</summary>
+            <param name="storage" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Load(System.String,System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Load(System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Save(System.String,System.String)">
+            <summary>
+모델을 파일에 저장한다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Save(System.String)">
+            <summary>
+모델을 파일에 저장한다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Clear">
+            <summary>
+메모리를 해제해 모델 상태를 리셋 한다
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvEMParams,OpenCvSharp.CvMat)">
+            <summary>
+샘플 집합으로부터 Gauss 혼합 파라미터를 추정한다
+</summary>
+            <param name="samples" />
+            <param name="sample_idx" />
+            <param name="params" />
+            <param name="labels" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvEMParams)">
+            <summary>
+샘플 집합으로부터 Gauss 혼합 파라미터를 추정한다
+</summary>
+            <param name="samples" />
+            <param name="sample_idx" />
+            <param name="params" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+샘플 집합으로부터 Gauss 혼합 파라미터를 추정한다
+</summary>
+            <param name="samples" />
+            <param name="sample_idx" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Train(OpenCvSharp.CvMat)">
+            <summary>
+샘플 집합으로부터 Gauss 혼합 파라미터를 추정한다
+</summary>
+            <param name="samples" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Predict(OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+샘플에 대한 응답을 예측한다
+</summary>
+            <param name="sample" />
+            <param name="probs" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.GetProbs">
+            <summary>
+확률 p_i,k의 초기치
+</summary>
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.GetWeights">
+            <summary>
+혼합 분포의 무게 π_k의 초기치
+</summary>
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.GetCovs">
+            <summary>
+혼합 분포의 공변동 행렬 S_k의 초기치
+</summary>
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.GetMeans">
+            <summary>
+혼합 분포의 평균 a_k의 초기치.
+</summary>
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.GetNClusters">
+            <summary>
+혼합수를 돌려준다
+</summary>
+            <returns>혼합수</returns>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvEM.CvPtr">
+            <summary>
+Data pointer (CvEM*)
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Finalize">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.Dispose">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.#ctor(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvEMParams,OpenCvSharp.CvMat)">
+            <summary>
+초기화
+</summary>
+            <param name="samples" />
+            <param name="sample_idx" />
+            <param name="params" />
+            <param name="labels" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEM.#ctor">
+            <summary>
+초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvEM.SizeOf">
+            <summary>
+sizeof(CvEM)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvEM">
+            <summary>
+EM 모델 종류
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Read(OpenCvSharp.CvFileStorage,OpenCvSharp.CvFileNode)">
+            <summary>
+파일 스토리지로부터 모델을 읽어들인다
+</summary>
+            <param name="storage" />
+            <param name="node" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Write(OpenCvSharp.CvFileStorage,System.String)">
+            <summary>
+모델을 파일에 쓴다
+</summary>
+            <param name="storage" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Load(System.String,System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Load(System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Save(System.String,System.String)">
+            <summary>
+모델을 파일에 보존한다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Save(System.String)">
+            <summary>
+모델을 파일에 보존한다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Clear">
+            <summary>
+메모리를 해제해, 모델 상태를 리셋트 한다
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.GetLayerSizes">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.GetLayerCount">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Predict(OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+입력 샘플에 대한 응답을 예측한다
+</summary>
+            <param name="inputs">입력 샘플</param>
+            <param name="outputs" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams,OpenCvSharp.MachineLearning.MLPTrainingFlag)">
+            <summary>
+MLP의 학습과 갱신
+</summary>
+            <param name="inputs">입력 벡터의 부동 소수점의 행렬로, 1행으로 1 벡터.</param>
+            <param name="outputs">대응하는 출력 벡터의 부동 소수점의 행렬로, 1행으로 1 벡터.</param>
+            <param name="sample_weights">(RPROP만) 각 샘플의 중량감을 지정하는 부동 소수점의 벡터.옵션. 학습에 대하고, 몇개의 샘플은 다른 것보다 중요한 경우가 있다. 예를 들면 검출율과 오류 검출율간의 적절한 밸런스를 찾기 위해서, 어느 클래스의 중량감을 증가시키고 싶은 경우 등.</param>
+            <param name="sample_idx">이용하는 샘플을 나타내는 정수의 벡터(즉_inputs와_outputs의 행).</param>
+            <param name="params">학습 파라미터</param>
+            <param name="flags">학습 알고리즘을 제어하는 여러가지 파라미터</param>
+            <returns>네트워크의 중량감을 계산/조정한 반복 회수.</returns>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams)">
+            <summary>
+MLP의 학습과 갱신
+</summary>
+            <param name="inputs">입력 벡터의 부동 소수점의 행렬로, 1행으로 1 벡터.</param>
+            <param name="outputs">대응하는 출력 벡터의 부동 소수점의 행렬로, 1행으로 1 벡터.</param>
+            <param name="sample_weights">(RPROP만) 각 샘플의 중량감을 지정하는 부동 소수점의 벡터.옵션. 학습에 대하고, 몇개의 샘플은 다른 것보다 중요한 경우가 있다. 예를 들면 검출율과 오류 검출율간의 적절한 밸런스를 찾기 위해서, 어느 클래스의 중량감을 증가시키고 싶은 경우 등.</param>
+            <param name="sample_idx">이용하는 샘플을 나타내는 정수의 벡터(즉_inputs와_outputs의 행).</param>
+            <param name="params">학습 파라미터</param>
+            <returns>네트워크의 중량감을 계산/조정한 반복 회수.</returns>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+MLP의 학습과 갱신
+</summary>
+            <param name="inputs">입력 벡터의 부동 소수점의 행렬로, 1행으로 1 벡터.</param>
+            <param name="outputs">대응하는 출력 벡터의 부동 소수점의 행렬로, 1행으로 1 벡터.</param>
+            <param name="sample_weights">(RPROP만) 각 샘플의 중량감을 지정하는 부동 소수점의 벡터.옵션. 학습에 대하고, 몇개의 샘플은 다른 것보다 중요한 경우가 있다. 예를 들면 검출율과 오류 검출율간의 적절한 밸런스를 찾기 위해서, 어느 클래스의 중량감을 증가시키고 싶은 경우 등.</param>
+            <param name="sample_idx">이용하는 샘플을 나타내는 정수의 벡터(즉_inputs와_outputs의 행).</param>
+            <returns>네트워크의 중량감을 계산/조정한 반복 회수.</returns>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+MLP의 학습과 갱신
+</summary>
+            <param name="inputs">입력 벡터의 부동 소수점의 행렬로, 1행으로 1 벡터.</param>
+            <param name="outputs">대응하는 출력 벡터의 부동 소수점의 행렬로, 1행으로 1 벡터.</param>
+            <param name="sample_weights">(RPROP만) 각 샘플의 중량감을 지정하는 부동 소수점의 벡터.옵션. 학습에 대하고, 몇개의 샘플은 다른 것보다 중요한 경우가 있다. 예를 들면 검출율과 오류 검출율간의 적절한 밸런스를 찾기 위해서, 어느 클래스의 중량감을 증가시키고 싶은 경우 등.</param>
+            <returns>네트워크의 중량감을 계산/조정한 반복 회수.</returns>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Create(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.MLPActivationFunc,System.Double,System.Double)">
+            <summary>
+지정한 토폴러지로 MLP를 구축한다
+</summary>
+            <param name="layer_sizes">입출력층을 포함한 각층의 뉴런수를 지정하는 정수의 벡터</param>
+            <param name="activ_func">각 뉴런의 활성화 함수</param>
+            <param name="f_param1">활성화 함수의 프리 파라미터α</param>
+            <param name="f_param2">활성화 함수의 프리 파라미터β</param>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Create(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.MLPActivationFunc)">
+            <summary>
+지정한 토폴러지로 MLP를 구축한다
+</summary>
+            <param name="layer_sizes">입출력층을 포함한 각층의 뉴런수를 지정하는 정수의 벡터</param>
+            <param name="activ_func">각 뉴런의 활성화 함수</param>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Create(OpenCvSharp.CvMat)">
+            <summary>
+지정한 토폴러지로 MLP를 구축한다
+</summary>
+            <param name="layer_sizes">입출력층을 포함한 각층의 뉴런수를 지정하는 정수의 벡터</param>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvANN_MLP.CvPtr">
+            <summary>
+데이타 포인터 (CvANN_MLP*)
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Finalize">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.Dispose">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.#ctor(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.MLPActivationFunc,System.Double,System.Double)">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="layer_sizes">입출력층을 포함한 각층의 뉴런수를 지정하는 정수의 벡터</param>
+            <param name="activ_func">각 뉴런의 활성화 함수</param>
+            <param name="f_param1">활성화 함수의 프리 파라미터α</param>
+            <param name="f_param2">활성화 함수의 프리 파라미터β</param>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.#ctor(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.MLPActivationFunc)">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="layer_sizes">입출력층을 포함한 각층의 뉴런수를 지정하는 정수의 벡터</param>
+            <param name="activ_func">각 뉴런의 활성화 함수</param>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.#ctor(OpenCvSharp.CvMat)">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="layer_sizes">입출력층을 포함한 각층의 뉴런수를 지정하는 정수의 벡터</param>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP.#ctor">
+            <summary>
+디폴트 초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvANN_MLP.SizeOf">
+            <summary>
+sizeof(CvANN_MLP)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvANN_MLP">
+            <summary>
+MLP 모델 클래스
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.MLPTrainingFlag">
+            <summary>
+MLP로 이용하는 학습 알고리즘
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.MLPTrainingFlag.NoOutputScale">
+            <summary>
+알고리즘은 출력 벡터를 정규화하지 않는다.
+이 플래그를 세트 하지 않는 경우, 학습 알고리즘은 사용된 활성화 함수에 응한 범위에 들어가도록(듯이), 각 출력을 자주적으로 정규화한다.
+[CvANN_MLP::NO_OUTPUT_SCALE]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.MLPTrainingFlag.NoInputScale">
+            <summary>
+알고리즘은 입력 벡터를 정규화하지 않는다.
+이 플래그를 세트 하지 않는 경우, 학습 알고리즘은 평균치가 0, 표준 편차가 1이 되도록(듯이), 각 입력을 자주적으로 정규화한다. 
+고빈도로 갱신되는 네트워크의 경우, 새로운 학습 데이터는 원래의 데이터로부터 큰폭으로 다를 가능성이 있다. 이러한 경우, 유저는 적절한 정규화를 도입할 필요가 있다.
+[CvANN_MLP::NO_INPUT_SCALE]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.MLPTrainingFlag.UpdateWeights">
+            <summary>
+1 - 알고리즘은 네트워크의 중량감을 최초부터 계산하지 않고, 갱신한다 (최초부터 계산하는 경우, 중량감은 Nguyen-Widrow 알고리즘을 사용해 초기화된다).
+[CvANN_MLP::UPDATE_WEIGHTS]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.MLPTrainingFlag.Zero">
+            <summary>
+플래그 없음
+[0]
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.MLPActivationFunc">
+            <summary>
+각 뉴런의 활성화 함수
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.MLPActivationFunc.Gaussian">
+            <summary>
+
+[CvANN_MLP::GAUSSIAN]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.MLPActivationFunc.SigmoidSym">
+            <summary>
+
+[CvANN_MLP::SIGMOID_SYM]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.MLPActivationFunc.Identity">
+            <summary>
+
+[CvANN_MLP::IDENTITY]
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.RpDwMax">
+            <summary>
+걁RPROP궻귒걂갌뢣귒delta궻띍묈뭠갆&gt;1궳궶궚귢궽궶귞궶궋갆
+긢긲긅깑긣뭠궼50갆궞궻긬깋긽??궼?몾뫬궻긽깛긫귩뢇맫궢궲뼻렑밒궸빾궑귡궢궔궶궋갆  
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.RpDwMin">
+            <summary>
+걁RPROP궻귒걂갌뢣귒delta궻띍룷뭠갆&gt;0궳궶궚귢궽궶귞궶궋갆
+긢긲긅깑긣뭠궼FLT_EPSILON갆궞궻긬깋긽??궼긓깛긚긣깋긏?궻param2귩믅궢궲먠믦궳궖귡갆 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.RpDwMinus">
+            <summary>
+걁RPROP궻귒걂갌뢣귒delta궻뙵룺똚릶갆 &lt;1궳궶궚귢궽궶귞궶궋갆
+긢긲긅깑긣뭠궼0.5궳갅귺깑긕깏긛?궻맶띿롌궸귝귢궽갅뫝궘궻뤾뜃궞귢궳뽦묋궼궶궋갆궞궻긬깋긽??궼?몾뫬궻긽깛긫귩뢇맫궢궲뼻렑밒궸빾궑귡궢궔궶궋갆  
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.RpDwPlus">
+            <summary>
+걁RPROP궻귒걂갌뢣귒delta궻몵돿똚릶갆&gt;1궳궶궚귢궽궶귞궶궋갆
+긢긲긅깑긣뭠궼1.2궳갅귺깑긕깏긛?궻맶띿롌궸귝귢궽갅뫝궘궻뤾뜃궞귢궳뽦묋궼궶궋갆 궞궻긬깋긽??궼?몾뫬궻긽깛긫귩뢇맫궢궲뼻렑밒궸빾궑귡궢궔궶궋갆  
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.RpDw0">
+            <summary>
+걁RPROP궻귒걂갌뢣귒delta궻룊딖뭠갆긢긲긅깑긣뭠궼0.1갆
+궞궻긬깋긽??궼긓깛긚긣깋긏?궻param1귩믅궢궲먠믦궳궖귡갆  
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.BpMomentScale">
+            <summary>
+걁뚮뜼땤?봡궻귒걂갌2궰멟귏궳궻??깛궻뢣귒궻뜼귩?궚귡똚릶갆
+궞궻긬깋긽??궳궼갅뢣귒궻깋깛??궶빾벍귩뒍귞궔궸궥귡궫귕궻뒿맜귩뙂믦궥귡갆 궞궻뭠궼0걁뼰뚼궸궥귡걂궔귞1궔갅궩귢댥뤵귩롦귟벦귡갆0.1믴뱗궕밙뱰궳궇귡갆
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.BpDwScale">
+            <summary>
+(뚮뜼땤?봡궻귒) 갌럁뢯궠귢궫뢣궠궻뚽봹궸?궚뜃귦궠귢귡똚릶갆릢룲궠귢귡뭠궼0.1믴뱗궳궇귡갆
+궞궻긬깋긽??궼긓깛긚긣깋긏?궻param1궳먠믦궳궖귡갆 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.TrainMethod">
+            <summary>
+뾭궋귡둾뢐귺깑긕깏긛?
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.TermCrit">
+            <summary>
+둾뢐귺깑긕깏긛?궻뢎뿹륆뙊갆
+귺깑긕깏긛?궸귝귟돺뱗똉귟뺅궠귢귡궔 걁?렅?궻뚮뜼땤?봡귺깑긕깏긛?궳궼갅궞궻릶궼둾뢐긢??긜긞긣궻긖귽긛궴?궚뜃귦궠귢귡걂궴갅1??깛궳뢣귒귩궵궻믴뱗빾뛛궥귡궔귩럚믦궥귡갆 
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.#ctor(OpenCvSharp.CvTermCriteria,OpenCvSharp.MachineLearning.MLPTrainingMethod,System.Double,System.Double)">
+            <summary>
+둾뢐긢??귩?궑궲룊딖돸
+</summary>
+            <param name="term_crit">둾뢐귺깑긕깏긛?궻뢎뿹륆뙊갆귺깑긕깏긛?궸귝귟돺뱗똉귟뺅궠귢귡궔 걁?렅?궻뚮뜼땤?봡귺깑긕깏긛?궳궼갅궞궻릶궼둾뢐긢??긜긞긣궻긖귽긛궴?궚뜃귦궠귢귡걂궴갅1??깛궳뢣귒귩궵궻믴뱗빾뛛궥귡궔귩럚믦궥귡갆</param>
+            <param name="train_method">뾭궋귡둾뢐귺깑긕깏긛?</param>
+            <param name="param1" />
+            <param name="param2" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.#ctor(OpenCvSharp.CvTermCriteria,OpenCvSharp.MachineLearning.MLPTrainingMethod,System.Double)">
+            <summary>
+둾뢐긢??귩?궑궲룊딖돸
+</summary>
+            <param name="term_crit">둾뢐귺깑긕깏긛?궻뢎뿹륆뙊갆귺깑긕깏긛?궸귝귟돺뱗똉귟뺅궠귢귡궔 걁?렅?궻뚮뜼땤?봡귺깑긕깏긛?궳궼갅궞궻릶궼둾뢐긢??긜긞긣궻긖귽긛궴?궚뜃귦궠귢귡걂궴갅1??깛궳뢣귒귩궵궻믴뱗빾뛛궥귡궔귩럚믦궥귡갆</param>
+            <param name="train_method">뾭궋귡둾뢐귺깑긕깏긛?</param>
+            <param name="param1" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.#ctor">
+            <summary>
+딓믦궻룊딖돸
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams.SizeOf">
+            <summary>
+sizeof(CvANN_MLP_TrainParams)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvANN_MLP_TrainParams">
+            <summary>
+MLP둾뢐귺깑긕깏긛?궻긬깋긽??
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.MLPTrainingMethod">
+            <summary>
+MLP로 이용하는 학습 알고리즘
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.MLPTrainingMethod.RPROP">
+            <summary>
+RPROP 알고리즘, 디폴트치
+[CvANN_MLP_TrainParams::RPROP]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.MLPTrainingMethod.BACKPROP">
+            <summary>
+순서대로 형태의 오차역전파 알고리즘
+[CvANN_MLP_TrainParams::BACKPROP]
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvEMParams.TermCrit">
+            <summary>
+처리의 종료 조건
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvEMParams.Covs">
+            <summary>
+혼합 분포의 공변동 행렬 S_k의 초기치
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvEMParams.Means">
+            <summary>
+혼합 분포의 평균 a_k의 초기치
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvEMParams.Weights">
+            <summary>
+혼합 분포의 중량감π_k의 초기치
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvEMParams.Probs">
+            <summary>
+확률 p_i,k의 초기치
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvEMParams.StartStep">
+            <summary>
+알고리즘을 스타트하는 최초의 스텝
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvEMParams.CovMatType">
+            <summary>
+혼합 분포 공변동 행렬의 타입
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvEMParams.NClusters">
+            <summary>
+혼합수
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEMParams.#ctor(System.Int32,OpenCvSharp.MachineLearning.EMCovMatType,OpenCvSharp.MachineLearning.EMStartStep,OpenCvSharp.CvTermCriteria,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat[])">
+            <summary>
+초기화
+</summary>
+            <param name="nclusters" />
+            <param name="cov_mat_type" />
+            <param name="start_step" />
+            <param name="term_crit" />
+            <param name="probs" />
+            <param name="weights" />
+            <param name="means" />
+            <param name="covs" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvEMParams.#ctor">
+            <summary>
+초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvEMParams.SizeOf">
+            <summary>
+sizeof(CvEMParams)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvEMParams">
+            <summary>
+EM알고리즘의 파라미터
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.EMStartStep">
+            <summary>
+알고리즘을 스타트하는 최초의 스텝
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.EMStartStep.Auto">
+            <summary>
+유저로부터 필요한 값이 지정되지 않는 경우, k-means 알고리즘이 혼합 분포 파라미터의 초기치 추정에 이용된다.[CvEM::TART_AUTO_STEP]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.EMStartStep.M">
+            <summary>
+알고리즘은 M-step로 스타트한다.초기 확률 pi,k 가 주어지지 않으면 안 된다.[CvEM::START_M_STEP]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.EMStartStep.E">
+            <summary>
+알고리즘은 E-step로 스타트한다. 적어도 평균 벡터의 초기치 CvEMParams::means 가 건네받지 않으면 안 된다. 
+옵션으로서 유저는 중량감(CvEMParams::weights)과/또는 공변동 행렬(CvEMParams::covs)을 줄 수도 있다.[CvEM::START_E_STEP]
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.EMCovMatType">
+            <summary>
+혼합 분포 공변동 행렬의 타입
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.EMCovMatType.Generic">
+            <summary>
+각각의 행렬의 공변동 행렬은, 스케일링 된 단위행렬μk*I이다. 그 때문에 추정되는 파라미터는μk뿐이다.
+이 옵션은 제약 조건이 관련하는 특별한 케이스나, 최적화의 제1 스텝으로서(예를 들면, 데이터가 PCA  에 의해서 사전 처리되고 있는 경우등) 이용되는 일이 있다. 
+이러한 예비 추정의 결과는, 한층 더 cov_mat_type=CvEM::COV_MAT_DIAGONAL를 지정한 최적화 처리에게 건네진다.[CvEM::COV_MAT_GENERIC]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.EMCovMatType.Diagonal">
+            <summary>
+각각의 행렬의 공변동 행렬은 임의의 정의 대각 요소를 가지는 대일본 장기 말열이며, 대각 이외의 요소는 0이 된다. 
+그 때문에, 자유로운 파라미터의 수는, 각각의 행렬로 d이다.이것은 좋은 추정 결과를 가져오는 옵션으로서 일반적으로 가장 사용된다.[CvEM::COV_MAT_DIAGONAL]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.EMCovMatType.Spherical">
+            <summary>
+각각의 혼합 분포의 공변동 행렬은 임의의 정정치 대칭 행렬이며, 각각의 행렬에 있어서의 자유로운 파라미터수는 약d2/2이다. 
+꽤 정확한 파라미터의 추정 초기치가 있는지, 학습 샘플수가 방대하지 않은 한, 이 옵션을 사용하는 것은 추천 되지 않는다.[CvEM::COV_MAT_SPHERICAL]
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoostTree.Clear">
+            <summary />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoostTree.Read(OpenCvSharp.CvFileStorage,OpenCvSharp.CvFileNode,OpenCvSharp.MachineLearning.CvBoost,OpenCvSharp.MachineLearning.CvDTreeTrainData)">
+            <summary />
+            <param name="fs" />
+            <param name="node" />
+            <param name="ensemble" />
+            <param name="data" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoostTree.Scale(System.Double)">
+            <summary />
+            <param name="s" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoostTree.Train(OpenCvSharp.MachineLearning.CvDTreeTrainData,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvBoost)">
+            <summary>
+결정 트리를 학습한다
+</summary>
+            <param name="train_data" />
+            <param name="subsample_idx" />
+            <param name="ensemble" />
+            <returns />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvBoostTree.CvPtr">
+            <summary>
+데이타 포인터 (CvDTree*)
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoostTree.Finalize">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoostTree.Dispose">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoostTree.#ctor">
+            <summary>
+디폴트 초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvBoostTree.SizeOf">
+            <summary>
+sizeof(CvDTree)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvBoostTree">
+            <summary>
+약한 결정트리 클래스
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Read(OpenCvSharp.CvFileStorage,OpenCvSharp.CvFileNode)">
+            <summary>
+파일 스토리지로부터 모델을 읽어들인다
+</summary>
+            <param name="storage" />
+            <param name="node" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Write(OpenCvSharp.CvFileStorage,System.String)">
+            <summary>
+모델을 파일에 쓴다
+</summary>
+            <param name="storage" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Load(System.String,System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Load(System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Save(System.String,System.String)">
+            <summary>
+모델을 파일에 보존한다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Save(System.String)">
+            <summary>
+모델을 파일에 보존한다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Clear">
+            <summary>
+메모리를 해제해, 모델 상태를 리셋트 한다
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.GetParams">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.GetWeakResponse">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.GetSubtreeWeights">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.GetWeights">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Prune(OpenCvSharp.CvSlice)">
+            <summary>
+지정된 약한 결정트리를 삭제한다
+</summary>
+            <param name="slice" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Predict(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvSlice)">
+            <summary>
+입력 샘플에 대한 응답을 예측한다
+</summary>
+            <param name="sample">입력 샘플</param>
+            <param name="missing">데이터 결손 마스크(옵션).데이터 결손을 취급하기 위해서는, 약한 결정트리의 대리 분기를 포함하지 않으면 안 된다.</param>
+            <param name="weak_responses">개개가 약한 결정트리부터의 응답의 출력 파라미터(옵션)로, 이것은 부동 소수점형 벡터이다.벡터의 요소수는, slice 장과 동일하지 않으면 안 된다.</param>
+            <param name="slice">예측에 이용되는 약한 결정트리 순서의 연속적 부분 집합(슬라이스).디폴트에서는, 모든 약한 분류기가 이용된다.</param>
+            <returns>중량감  투표에 근거하는 출력 클래스 라벨</returns>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Predict(OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+입력 샘플에 대한 응답을 예측한다
+</summary>
+            <param name="sample">입력 샘플</param>
+            <param name="missing">데이터 결손 마스크(옵션).데이터 결손을 취급하기 위해서는, 약한 결정트리의 대리 분기를 포함하지 않으면 안 된다.</param>
+            <returns>중량감  투표에 근거하는 출력 클래스 라벨</returns>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Predict(OpenCvSharp.CvMat)">
+            <summary>
+입력 샘플에 대한 응답을 예측한다
+</summary>
+            <param name="sample">입력 샘플</param>
+            <returns>중량감  투표에 근거하는 출력 클래스 라벨</returns>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Train(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvBoostParams,System.Boolean)">
+            <summary>
+부스트 된 만큼 분류기의 학습
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+            <param name="params" />
+            <param name="update" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Train(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvBoostParams)">
+            <summary>
+부스트 된 만큼 분류기의 학습
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+            <param name="params" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Train(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+부스트 된 만큼 분류기의 학습
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Train(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat)">
+            <summary>
+부스트 된 만큼 분류기의 학습
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <returns />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvBoost.CvPtr">
+            <summary>
+데이타 포인터 (CvBoost*)
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Finalize">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.Dispose">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.#ctor(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvBoostParams)">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+            <param name="params" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.#ctor(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.#ctor(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat)">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoost.#ctor">
+            <summary>
+디폴트 초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvBoost.SizeOf">
+            <summary>
+sizeof(CvBoost)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvBoost">
+            <summary>
+부스트 된 만큼 류기 클래스
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvBoostParams.WeightTrimRate">
+            <summary>
+트리밍 중량감 비율.0..1 의 범위내.
+만약 이 파라미터가 0 혹은 &gt;1 의 경우, 트리밍은 행해지지 않고,
+모든 샘플이 각 반복 계산으로 이용된다.디폴트치는 0.95 이다.
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvBoostParams.SplitCriteria">
+            <summary>
+약한 트리를 구축할 때의 최적 분기를 선택할 때에 이용되는 분기 규칙
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvBoostParams.WeakCount">
+            <summary>
+구축하는 약한 분류기의 개수. 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvBoostParams.BoostType">
+            <summary>
+부스 팅의 종류
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoostParams.#ctor(OpenCvSharp.MachineLearning.BoostType,System.Int32,System.Double,System.Int32,System.Boolean,System.Single[])">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="boost_type">부스 팅의 종류</param>
+            <param name="weak_count">구축하는 약한 분류기의 개수</param>
+            <param name="weight_trim_rate">트리밍 중량감 비율.0..1 의 범위내.만약 이 파라미터가 0 혹은 &gt;1 의 경우, 트리밍은 행해지지 않고, 모든 샘플이 각 반복 계산으로 이용된다.디폴트치는 0.95 이다</param>
+            <param name="max_depth">이 파라미터는 트리가 취할 수 있는 최대의 깊이를 결정한다.학습 알고리즘은, 노드의 깊이가 max_depth  보다 작다면, 그것을 분기 시키려고 한다.다른 종료 조건이 채워졌을 경우나(섹션 초에 있는 학습 수속의 개요를 참조), 혹은/게다가 트리가 벨 경우 등, 실제의 깊이는 더 얕을지도 모른다.</param>
+            <param name="use_surrogates">true의 경우, 대리 분기가 구축된다. 대리 분기는 관측치 데이터의 결손을 처리하는 경우나, 변수의 중요도의 추정에 필요하다. </param>
+            <param name="priors">클래스 라벨치에 의해서 보존된 클래스 사전 확률의 배열. 이 파라미터는, 어느 특정의 클래스에 대한 결정목의 우선 경향을 조정하기 위해서 이용된다. 예를 들면, 만약 유저가 하등의 드문 예외적 발생을 검출하고 싶다고 생각했을 경우, 학습 데이터는, 아마 예외적인 케이스보다 훨씬 많은 정상적인 케이스를 포함하고 있으므로, 전케이스가 정상적이다라고 간주하는 것만으로, 매우 뛰어난 만큼 종류 성능이 실현될 것이다. 이와 같이 예외 케이스를 무시해 분류 성능을 올리는 것을 피하기 위해서, 사전 확률을 지정할 수 있다. 예외적인 케이스의 확률을 인공적으로 증가시키는(0.5 까지, 혹은 그 이상으로) 일로, 분류에 실패한 예외의 중량감이 보다 커져, 트리는 적절히 조절된다. </param>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvBoostParams.#ctor">
+            <summary>
+디폴트 초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvBoostParams.SizeOf">
+            <summary>
+sizeof(CvBoostParams)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvBoostParams">
+            <summary>
+부스 팅의 학습 파라미터
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.BoostType">
+            <summary>
+부스 팅의 종류
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.BoostType.Gentle">
+            <summary>
+Gentle AdaBoost
+[CvBoost::GENTLE]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.BoostType.Logit">
+            <summary>
+LogitBoost
+[CvBoost::LOGIT]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.BoostType.Real">
+            <summary>
+Real AdaBoost
+[CvBoost::REAL]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.BoostType.Discrete">
+            <summary>
+Discrete AdaBoost
+[CvBoost::DISCRETE]
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.BoostSplitCriteria">
+            <summary>
+약한 트리를 구축할 때의 최적 분기를 선택할 때에 이용되는 분기 규칙
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.BoostSplitCriteria.Sqerr">
+            <summary>
+이것은 LogitBoost 및 Gentle AdaBoost 로 이용되는 디폴트 한편 유일한 옵션이다.
+[CvBoost::SQERR]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.BoostSplitCriteria.Misclass">
+            <summary>
+오판별율을 이용한다.이것은 Discrete AdaBoost 의 디폴트 옵션이다.Real AdaBoost 에서도 이용되는 일이 있다.
+[CvBoost::MISCLASS]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.BoostSplitCriteria.Gini">
+            <summary>
+지니 지표(Gini index)를 이용한다.이것은 Real AdaBoost 의 디폴트 옵션이다.Discrete AdaBoost 에서도 이용되는 일이 있다.
+[CvBoost::GINI]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.BoostSplitCriteria.Default">
+            <summary>
+개개의 부스 팅 수법에 있어서의 디폴트 규칙을 이용한다
+[CvBoost::DEFAULT]
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Read(OpenCvSharp.CvFileStorage,OpenCvSharp.CvFileNode)">
+            <summary>
+파일 스토리지로부터 모델을 읽어들인다
+</summary>
+            <param name="storage" />
+            <param name="node" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Write(OpenCvSharp.CvFileStorage,System.String)">
+            <summary>
+모델을 파일에 쓴다
+</summary>
+            <param name="storage" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Load(System.String,System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Load(System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Save(System.String,System.String)">
+            <summary>
+모델을 파일에 저장한다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Save(System.String)">
+            <summary>
+모델을 파일에 저장한다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Clear">
+            <summary>
+메모리를 해제해, 모델 상태를 리셋 한다
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,System.Boolean)">
+            <summary>
+모델의 학습
+</summary>
+            <param name="train_data">기존의 샘플 (m*n)</param>
+            <param name="responses">기존의 샘플의 클래스 (m*1)</param>
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="update">모델을 기존에 추가(false)할것인가, 새로운 학습 데이터를 이용해 갱신(true)할것인가</param>
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+모델의 학습
+</summary>
+            <param name="train_data">기존의 샘플 (m*n)</param>
+            <param name="responses">기존의 샘플의 클래스 (m*1)</param>
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+모델의 학습
+</summary>
+            <param name="train_data">기존의 샘플 (m*n)</param>
+            <param name="responses">기존의 샘플의 클래스 (m*1)</param>
+            <param name="var_idx" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+모델의 학습
+</summary>
+            <param name="train_data">기존의 샘플 (m*n)</param>
+            <param name="responses">기존의 샘플의 클래스 (m*1)</param>
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Predict(OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+샘플에 대한 응답을 예측한다
+</summary>
+            <param name="sample">미지의 샘플 (l*n)</param>
+            <param name="results">기존의 샘플의 클래스 (l*1)</param>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.CvPtr">
+            <summary>
+데이터 포인터 (CvNormalBayesClassifier*)
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Finalize">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.Dispose">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.#ctor(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="train_data">기존의 샘플 (m*n)</param>
+            <param name="responses">기존의 샘플의 클래스 (m*1)</param>
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.#ctor">
+            <summary>
+디폴트 초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvNormalBayesClassifier.SizeOf">
+            <summary>
+sizeof(CvNormalBayesClassifier)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvNormalBayesClassifier">
+            <summary>
+정규분포 데이터에 대한 베이즈 분류기 클래스
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvRTParams.TermCrit">
+            <summary>
+forest의 성장에 대한 종료 조건. 
+term_crit.max_iter는, forest안의 트리의 최대수 (constructor　 　 의 파라미터인 max_tree_count도 참조하는, 디폴트에서는 50).
+term_crit.epsilon는, 만족되는 정도를 나타낸다(OOB error). 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvRTParams.NactiveVars">
+            <summary>
+변수의 수.각각의 트리로 랜덤에 선택되어 최적인 분할을 요구하기 위해서 사용된다. 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvRTParams.CalcVarImportance">
+            <summary>
+세트 되고 있는 경우, 변수의 중요도가 학습 시에 계산된다. 계산한 변수의 중요도의 배열을 꺼내기 위해서는, CvRTrees::get_var_importance()를 불러낸다. 
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTParams.#ctor(System.Int32,System.Int32,System.Single,System.Boolean,System.Int32,System.Single[],System.Boolean,System.Int32,OpenCvSharp.CvTermCriteria)">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="max_depth">이 파라미터는 트리가 취할 수 있는 최대의 깊이를 결정한다.학습 알고리즘은, 노드의 깊이가 max_depth  보다 작다면, 그것을 분기 시키려고 한다.다른 종료 조건이 채워졌을 경우나(섹션 초에 있는 학습 수속의 개요를 참조), 혹은/게다가 트리가 컷될 경우 등, 실제의 깊이는 더 얕을지도 모른다.</param>
+            <param name="min_sample_count">어느 노드에 대한 샘플수가 이 파라미터치보다 적은 경우, 그 노드는 분기 하지 않는다.</param>
+            <param name="regression_accuracy">다른 종료 조건 - 회귀목의 경우만. 추정된 노드치가, 그 노드의 학습 샘플의 응답에 대해서, 이 파라미터치보다 낮은 정도를 가지는 경우, 노드는 그 이상 분기 하지 않게 된다.</param>
+            <param name="use_surrogates">true의 경우, 대리 분기가 구축된다. 대리 분기는 관측치 데이터의 결손을 처리하는 경우나, 변수의 중요도의 추정에 필요하다.</param>
+            <param name="max_categories">학습 수속이 분기를 만들 때의 이산 변수가 max_categories보다 많은 값을 받으려고 한다면, (알고리즘이 지수함수적이다 것으로) 정확한 부분 집합 추정을 실시하는 경우에 매우 시간이 걸릴 가능성이 있다. 대신에, (ML를 포함한다) 많은 결정트리 엔진이, 전샘플을 max_categories 개의 클러스터로 분류하는 것에 의해서 (즉 몇개의 카테고리는 한 살에 머지 된다), 이 경우의 차선 최적 분기를 찾아내려고 한다.이 테크닉은, N(&gt;2)-클래스 분류 문제에 대해서만 적용되는 것에 주의한다. 회귀 및 2-클래스 분류의 경우는, 이러한 수단을 취하지 않아도 효율적으로 최적 분기를 찾아낼 수 있으므로, 이 파라미터는 사용되지 않는다.</param>
+            <param name="priors">클래스 라벨치에 의해서 보존된 클래스 사전 확률의 배열. 이 파라미터는, 어느 특정의 클래스에 대한 결정트리의 우선 경향을 조정하기 위해서 이용된다. 예를 들면, 만약 유저가 하등의 드문 예외적 발생을 검출하고 싶다고 생각했을 경우, 학습 데이터는, 아마 예외적인 케이스보다 훨씬 많은 정상적인 케이스를 포함하고 있으므로, 전케이스가 정상적이다라고 간주하는 것만으로, 매우 뛰어난 만큼 종류 성능이 실현될 것이다. 이와 같이 예외 케이스를 무시해 분류 성능을 올리는 것을 피하기 위해서, 사전 확률을 지정할 수 있다. 예외적인 케이스의 확률을 인공적으로 증가시키는(0.5 까지, 혹은 그 이상으로) 일로, 분류에 실패한 예외의 중량감이 보다 커져, 트리는 적절히 조절된다. </param>
+            <param name="calc_var_importance">세트 되고 있는 경우, 변수의 중요도가 학습 시에 계산된다. 계산한 변수의 중요도의 배열을 꺼내기 위해서는, CvRTrees::get_var_importance()를 불러낸다. </param>
+            <param name="nactive_vars">변수의 수.각각의 트리로 랜덤에 선택되어 최적인 분할을 요구하기 위해서 사용된다.</param>
+            <param name="term_crit">forest의 성장에 대한 종료 조건. term_crit.max_iter는, forest안의 트리의 최대수 (constructor　 　 의 파라미터인 max_tree_count도 참조하는, 디폴트에서는 50).term_crit.epsilon는, 만족되는 정도를 나타낸다(OOB error). </param>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvRTParams.#ctor">
+            <summary>
+디폴트 초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvRTParams.SizeOf">
+            <summary>
+sizeof(CvRTParams)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvRTParams">
+            <summary>
+랜덤 트리의 학습 파라미터
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Read(OpenCvSharp.CvFileStorage,OpenCvSharp.CvFileNode)">
+            <summary>
+파일 스토리지로부터 모델을 읽어들인다
+</summary>
+            <param name="storage" />
+            <param name="node" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Write(OpenCvSharp.CvFileStorage,System.String)">
+            <summary>
+모델을 파일에 쓴다
+</summary>
+            <param name="storage" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Load(System.String,System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Load(System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Save(System.String,System.String)">
+            <summary>
+모델을 파일에 저장한다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Save(System.String)">
+            <summary>
+모델을 파일에 저장한다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Clear">
+            <summary>
+메모리를 해제, 모델 상태를 리셋 한다
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.TrainAuto(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvSVMParams,System.Int32,OpenCvSharp.MachineLearning.CvParamGrid,OpenCvSharp.MachineLearning.CvParamGrid,OpenCvSharp.MachineLearning.CvParamGrid,OpenCvSharp.MachineLearning.CvParamGrid,OpenCvSharp.MachineLearning.CvParamGrid,OpenCvSharp.MachineLearning.CvParamGrid)">
+            <summary>
+SVM를 최적인 파라미터로 학습한다
+</summary>
+            <param name="train_data" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="params" />
+            <param name="k_fold">교차 검정(Cross-validation) 파라미터.학습 집합은, k_fold의 부분 집합에 분할되어 하나의 부분 집합이 모델의 학습에 이용되어 그 외의 부분 집합은 테스트 집합이 된다.즉, SVM 알고리즘은, k_fold회실행된다.</param>
+            <param name="C_grid" />
+            <param name="gamma_grid" />
+            <param name="p_grid" />
+            <param name="nu_grid" />
+            <param name="coef_grid" />
+            <param name="degree_grid" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.TrainAuto(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvSVMParams,System.Int32)">
+            <summary>
+SVM를 최적인 파라미터로 학습한다
+</summary>
+            <param name="train_data" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="params" />
+            <param name="k_fold">교차 검정(Cross-validation) 파라미터. 학습 집합은, k_fold의 부분 집합에 분할되어 하나의 부분 집합이 모델의 학습에 이용되어 그 외의 부분 집합은 테스트 집합이 된다.즉, SVM 알고리즘은, k_fold회 실행된다.</param>
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.TrainAuto(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvSVMParams)">
+            <summary>
+SVM를 최적인 파라미터로 학습한다
+</summary>
+            <param name="train_data" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="params" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvSVMParams)">
+            <summary>
+SVM를 학습한다
+</summary>
+            <param name="train_data" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="params" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+SVM를 학습한다
+</summary>
+            <param name="train_data" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+SVM를 학습한다
+</summary>
+            <param name="train_data" />
+            <param name="responses" />
+            <param name="var_idx" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Train(OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+SVM를 학습한다
+</summary>
+            <param name="train_data" />
+            <param name="responses" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Predict(OpenCvSharp.CvMat)">
+            <summary>
+샘플에 대한 응답을 예측한다
+</summary>
+            <param name="sample" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.GetVarCount">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.GetParams">
+            <summary>
+현재의 SVM 파라미터를 돌려준다
+</summary>
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.GetSupportVector(System.Int32)">
+            <summary>
+특정의 서포트 벡터를 취득한다
+</summary>
+            <param name="i" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.GetSupportVectorCount">
+            <summary>
+서포트 벡터의 개수를 돌려준다
+</summary>
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.GetDefaultGrid(OpenCvSharp.MachineLearning.SVMParamType)">
+            <summary>
+SVM 파라미터를 위한 그리드를 생성한다
+</summary>
+            <param name="param_id" />
+            <returns />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvSVM.CvPtr">
+            <summary>
+Data pointer (CvSVM*)
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Finalize">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.Dispose">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.#ctor(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvSVMParams)">
+            <summary>
+초기화
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVM.#ctor">
+            <summary>
+초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvSVM.SizeOf">
+            <summary>
+sizeof(CvSVM)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvSVM">
+            <summary>
+SVM model classifier
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.SVMParamType">
+            <summary>
+SVM 파라미터의 종류
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMParamType.Degree">
+            <summary>
+[CvSVM::DEGREE]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMParamType.Coef">
+            <summary>
+[CvSVM::COEF]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMParamType.Nu">
+            <summary>
+[CvSVM::NU]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMParamType.P">
+            <summary>
+[CvSVM::P]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMParamType.Gamma">
+            <summary>
+[CvSVM::GAMMA]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMParamType.C">
+            <summary>
+[CvSVM::C]
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvParamGrid.Check">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvParamGrid.#ctor(System.Double,System.Double,System.Double)">
+            <summary>
+Constructor
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvParamGrid.Step">
+            <summary />
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvParamGrid.MaxVal">
+            <summary />
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvParamGrid.MinVal">
+            <summary />
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvParamGrid">
+            <summary>
+SVM 알고리즘의 파라미터의 그리드
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Read(OpenCvSharp.CvFileStorage,OpenCvSharp.CvFileNode)">
+            <summary>
+파일 스토리지로부터 모델을 읽어들인다
+</summary>
+            <param name="storage" />
+            <param name="node" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Write(OpenCvSharp.CvFileStorage,System.String)">
+            <summary>
+모델을 파일에 쓴다
+</summary>
+            <param name="storage" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Load(System.String,System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Load(System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Save(System.String,System.String)">
+            <summary>
+모델을 파일에 보존한다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Save(System.String)">
+            <summary>
+모델을 파일에 보존한다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Clear">
+            <summary>
+메모리를 해제해, 모델 상태를 리셋트 한다
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Write(OpenCvSharp.CvFileStorage)">
+            <summary>
+모델을 파일에 쓴다
+</summary>
+            <param name="storage" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Read(OpenCvSharp.CvFileStorage,OpenCvSharp.CvFileNode,OpenCvSharp.MachineLearning.CvDTreeTrainData)">
+            <summary>
+파일 스토리지로부터 모델을 읽어들인다
+</summary>
+            <param name="storage" />
+            <param name="node" />
+            <param name="data" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.GetData">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.GetPrunedTreeIdx">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.GetRoot">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.GetVarImportance">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Predict(OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+입력 벡터에 대한 결정 나뭇잎 노드를 돌려준다
+</summary>
+            <param name="sample" />
+            <param name="missing_data_mask" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Predict(OpenCvSharp.CvMat)">
+            <summary>
+입력 벡터에 대한 결정 나뭇잎 노드를 돌려준다
+</summary>
+            <param name="sample" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Train(OpenCvSharp.MachineLearning.CvDTreeTrainData,OpenCvSharp.CvMat)">
+            <summary>
+결정 트리를 학습한다
+</summary>
+            <param name="train_data" />
+            <param name="subsample_idx" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Train(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvDTreeParams)">
+            <summary>
+결정 트리를 학습한다
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+            <param name="params" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Train(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+결정 트리를 학습한다
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Train(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat)">
+            <summary>
+결정 트리를 학습한다
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <returns />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTree.CvPtr">
+            <summary>
+데이타 포인터 (CvDTree*)
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Finalize">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.Dispose">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTree.#ctor">
+            <summary>
+디폴트 초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvDTree.SizeOf">
+            <summary>
+sizeof(CvDTree)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvDTree">
+            <summary>
+결정 트리
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvStatModel.Read(OpenCvSharp.CvFileStorage,OpenCvSharp.CvFileNode)">
+            <summary>
+파일 스토리지로부터 모델을 읽어들인다
+</summary>
+            <param name="storage" />
+            <param name="node" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvStatModel.Write(OpenCvSharp.CvFileStorage,System.String)">
+            <summary>
+모델을 파일에 쓴다
+</summary>
+            <param name="storage" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvStatModel.Load(System.String,System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvStatModel.Load(System.String)">
+            <summary>
+파일로부터 모델을 읽어들인다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvStatModel.Save(System.String,System.String)">
+            <summary>
+델을 파일에 저장한다
+</summary>
+            <param name="filename" />
+            <param name="name" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvStatModel.Save(System.String)">
+            <summary>
+모델을 파일에 저장한다
+</summary>
+            <param name="filename" />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvStatModel.Clear">
+            <summary>
+메모리를 해제해, 모델 상태를 리셋 한다
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvStatModel.CvPtr">
+            <summary>
+native pointer
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvStatModel.#ctor">
+            <summary>
+포인터의 초기화
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvStatModel">
+            <summary>
+ML의 통계 모델을 위한 기본 클래스
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.GetChildBufIdx(OpenCvSharp.MachineLearning.CvDTreeNode)">
+            <summary />
+            <param name="n" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.GetOrdVarData(OpenCvSharp.MachineLearning.CvDTreeNode,System.Int32)">
+            <summary />
+            <param name="n" />
+            <param name="vi" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.GetCatVarData(OpenCvSharp.MachineLearning.CvDTreeNode,System.Int32)">
+            <summary />
+            <param name="n" />
+            <param name="vi" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.GetLabels(OpenCvSharp.MachineLearning.CvDTreeNode)">
+            <summary />
+            <param name="n" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.GetOrdResponses(OpenCvSharp.MachineLearning.CvDTreeNode)">
+            <summary />
+            <param name="n" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.GetClassLabels(OpenCvSharp.MachineLearning.CvDTreeNode)">
+            <summary />
+            <param name="n" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.GetWorkVarCount">
+            <summary />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.GetVarType(System.Int32)">
+            <summary />
+            <param name="vi" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.GetNumClasses">
+            <summary />
+            <returns />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.Priors">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.VarType">
+            <summary>
+i번째의 요소가
+k&lt;0  - 연속변수, 
+k&gt;=0 - 카테고리 변수, cat_* 배열의 k번째의 요소를 참조
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.VarIdx">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.SplitBuf">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.Direction">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.Buf">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.Counts">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.CatMap">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.CatOfs">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.CatCount">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.Shared">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.BufSize">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.BufCount">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.IsClassifier">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.HavePriors">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.HaveLabels">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.CatVarCount">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.OrdVarCount">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.MaxCCount">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.VarCount">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.VarAll">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.SampleCount">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeTrainData.CvPtr">
+            <summary>
+데이터 포인터 (CvDTreeTrainData*)
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvDTreeTrainData.SizeOf">
+            <summary>
+sizeof(CvDTreeTrainData) 
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.Finalize">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.Dispose">
+            <summary>
+자원의 해제
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.SetData(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvDTreeParams,System.Boolean,System.Boolean,System.Boolean)">
+            <summary />
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+            <param name="params" />
+            <param name="shared" />
+            <param name="add_labels" />
+            <param name="update_data" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.SetData(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary />
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.SetData(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat)">
+            <summary />
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.#ctor(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.CvDTreeParams,System.Boolean,System.Boolean)">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+            <param name="params" />
+            <param name="shared" />
+            <param name="add_labels" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.#ctor(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <param name="var_idx" />
+            <param name="sample_idx" />
+            <param name="var_type" />
+            <param name="missing_mask" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.#ctor(OpenCvSharp.CvMat,OpenCvSharp.MachineLearning.DTreeDataLayout,OpenCvSharp.CvMat,OpenCvSharp.CvMat)">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="train_data" />
+            <param name="tflag" />
+            <param name="responses" />
+            <returns />
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.#ctor(System.IntPtr)">
+            <summary>
+포인터로 초기화
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeTrainData.#ctor">
+            <summary>
+디폴트 초기화
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvDTreeTrainData">
+            <summary>
+결정 트리 노드
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.DTreeDataLayout">
+            <summary>
+결정 트리의 데이터 레이아웃
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.DTreeDataLayout.ColSample">
+            <summary>
+
+[CV_COL_SAMPLE]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.DTreeDataLayout.RowSample">
+            <summary>
+
+[CV_ROW_SAMPLE]
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvPair32s32f.#ctor(System.Int32,System.Single)">
+            <summary>
+초기화
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvPair32s32f.Val">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvPair32s32f.I">
+            <summary />
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvPair32s32f">
+            <summary />
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeParams.Priors">
+            <summary>
+클래스 라벨치에 의해서 보존된 클래스 사전 확률의 배열. 
+이 파라미터는, 어느 특정의 클래스에 대한 결정트리의 우선 경향을 조정하기 위해서 이용된다. 예를 들면,
+만약 유저가 하등의 드문 예외적 발생을 검출하고 싶다고 생각했을 경우, 학습 데이터는, 아마 예외적인 케이스보다
+훨씬 많은 정상적인 케이스를 포함하고 있으므로, 전케이스가 정상적이다라고 간주하는 것만으로, 매우 뛰어난 만큼 종류 성능이 실현될 것이다. 
+이와 같이 예외 케이스를 무시해 분류 성능을 올리는 것을 피하기 위해서, 사전 확률을 지정할 수 있다. 
+예외적인 케이스의 확률을 인공적으로 증가시키는(0.5 까지, 혹은 그 이상으로) 일로, 분류에 실패한 예외의 중량감이 보다 커져, 트리는 적절히 조절된다. 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeParams.RegressionAccuracy">
+            <summary>
+다른 종료 조건 - 회귀트리의 경우만. 추정된 노드치가, 그 노드의 학습 샘플의 응답에 대해서,
+이 파라미터치보다 낮은 정도를 가지는 경우, 노드는 그 이상 분기 하지 않게 된다.
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeParams.TruncatePrunedTree">
+            <summary>
+true 의 경우, (TnCvDTree::PrunedTreeIdx이다) 절단 노드가, 트리로부터 물리적으로 삭제된다. 
+그렇지 않은 경우는, 그것들은 삭제는 되지 않고, CvDTree::pruned_tree_idx 를 줄이는(예를 들면 -1 을 설정한다) 것에 의하고,
+오리지날의 초벌 손질되어 있지 않은(혹은 적극적으로는 컷하지 않았다) 트리로부터의 결과를 얻을 수 있다. 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeParams.Use1seRule">
+            <summary>
+true 의 경우, 트리는 초벌 손질 수속에 의해서 잘라 버릴 수 있다.
+이것에 의해, 컴팩트하고 학습 데이터 노이즈에 대해서 보다 내성을 가지는 트리가 되지만, 결정목의 정확함은 약간 뒤떨어진다. 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeParams.UseSurrogates">
+            <summary>
+true의 경우, 대리 분기가 구축된다. 대리 분기는 관측치 데이터의 결손을 처리하는 경우나, 변수의 중요도의 추정에 필요하다.
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeParams.CvFolds">
+            <summary>
+이 파라미터가 &gt;1 의 경우, 트리는 cv_folds 분할 교차 검증법에 의해 벤다. 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeParams.MinSampleCount">
+            <summary>
+어느 노드에 대한 샘플수가 이 파라미터치보다 적은 경우, 그 노드는 분기 하지 않는다.
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeParams.MaxDepth">
+            <summary>
+이 파라미터는 트리가 취할 수 있는 최대의 깊이를 결정한다.학습 알고리즘은, 노드의 깊이가 max_depth  보다 작다면,
+그것을 분기 시키려고 한다.다른 종료 조건이 채워졌을 경우나(섹션 초에 있는 학습 수속의 개요를 참조),
+혹은/게다가 트리가 컷 될 경우 등, 실제의 깊이는 더 얕을지도 모른다. 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeParams.MaxCategories">
+            <summary>
+학습 수속이 분기를 만들 때의 이산 변수가 MaxCategories보다 많은 값을 받으려고 한다면,
+(알고리즘이 지수함수적이다 것으로) 정확한 부분 집합 추정을 실시하는 경우에 매우 시간이 걸릴 가능성이 있다. 
+대신에, (ML를 포함한다) 많은 결정트리 엔진이, 전샘플을 MaxCategories 개의 클러스터로 분류하는 것에 의해서
+(즉 몇개의 카테고리는 한 살에 머지 된다), 이 경우의 차선 최적 분기를 찾아내려고 한다.
+이 테크닉은, N(&gt;2)-클래스 분류 문제에 대해서만 적용되는 것에 주의한다. 
+회귀 및 2-클래스 분류의 경우는, 이러한 수단을 취하지 않아도 효율적으로 최적 분기를 찾아낼 수 있으므로, 이 파라미터는 사용되지 않는다. 
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeParams.#ctor(System.Int32,System.Int32,System.Single,System.Boolean,System.Int32,System.Int32,System.Boolean,System.Boolean,System.Single[])">
+            <summary>
+학습 데이터를 주어 초기화
+</summary>
+            <param name="max_depth">이 파라미터는 트리가 취할 수 있는 최대의 깊이를 결정한다.학습 알고리즘은, 노드의 깊이가 max_depth  보다 작다면, 그것을 분기 시키려고 한다.다른 종료 조건이 채워졌을 경우나(섹션 초에 있는 학습 수속의 개요를 참조), 혹은/게다가 트리가 잘릴 경우 등, 실제의 깊이는 더 얕을지도 모른다.</param>
+            <param name="min_sample_count">어느 노드에 대한 샘플수가 이 파라미터치보다 적은 경우, 그 노드는 분기 하지 않는다. </param>
+            <param name="regression_accuracy">다른 종료 조건 - 회귀 트리의 경우만. 추정된 노드치가, 그 노드의 학습 샘플의 응답에 대해서, 이 파라미터치보다 낮은 정도를 가지는 경우, 노드는 그 이상 분기 하지 않게 된다.</param>
+            <param name="use_surrogates">true의 경우, 대리 분기가 구축된다. 대리 분기는 관측치 데이터의 결손을 처리하는 경우나, 변수의 중요도의 추정에 필요하다.</param>
+            <param name="max_categories">학습 수속이 분기를 만들 때의 이산 변수가 max_categories보다 많은 값을 받으려고 한다면, (알고리즘이 지수함수적이다 것으로) 정확한 부분 집합 추정을 실시하는 경우에 매우 시간이 걸릴 가능성이 있다. 대신에, (ML를 포함한다) 많은 결정트리 엔진이, 전샘플을 max_categories 개의 클러스터로 분류하는 것에 의해서 (즉 몇개의 카테고리는 한 살에 머지 된다), 이 경우의 차선 최적 분기를 찾아내려고 한다.이 테크닉은, N(&gt;2)-클래스 분류 문제에 대해서만 적용되는 것에 주의한다. 회귀 및 2-클래스 분류의 경우는, 이러한 수단을 취하지 않아도 효율적으로 최적 분기를 찾아낼 수 있으므로, 이 파라미터는 사용되지 않는다.</param>
+            <param name="cv_folds">이 파라미터가 &gt;1 의 경우, 나무는 cv_folds 분할 교차 검증법에 의해 벤다. </param>
+            <param name="use_1se_rule">true 의 경우, 트리는 초벌 손질 수속에 의해서 잘라 버릴 수 있다. 이것에 의해, 컴팩트하고 학습 데이터 노이즈에 대해서 보다 내성을 가지는 트리가 되지만, 결정트리의 정확함은 약간 뒤떨어진다. </param>
+            <param name="truncate_pruned_tree">true 의 경우, (TnCvDTree::pruned_tree_idx이다) 절단 노드가, 트리로부터 물리적으로 삭제된다. 그렇지 않은 경우는, 그것들은 삭제는 되지 않고, CvDTree::pruned_tree_idx 를 줄이는(예를 들면 -1 을 설정한다) 것에 의하고, 오리지날의 초벌 손질되어 있지 않은(혹은 적극적으로는 컷하지 않았다) 트리로부터의 결과를 얻을 수 있다.</param>
+            <param name="priors">클래스 라벨치에 의해서 보존된 클래스 사전 확률의 배열. 이 파라미터는, 어느 특정의 클래스에 대한 결정목의 우선 경향을 조정하기 위해서 이용된다. 예를 들면, 만약 유저가 하등의 드문 예외적 발생을 검출하고 싶다고 생각했을 경우, 학습 데이터는, 아마 예외적인 케이스보다 훨씬 많은 정상적인 케이스를 포함하고 있으므로, 전케이스가 정상적이다라고 간주하는 것만으로, 매우 뛰어난 만큼 종류 성능이 실현될 것이다. 이와 같이 예외 케이스를 무시해 분류 성능을 올리는 것을 피하기 위해서, 사전 확률을 지정할 수 있다. 예외적인 케이스의 확률을 인공적으로 증가시키는(0.5 까지, 혹은 그 이상으로) 일로, 분류에 실패한 예외의 중량감이 보다 커져, 트리는 적절히 조절된다. </param>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvDTreeParams.#ctor">
+            <summary>
+디폴트 초기화
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvDTreeParams.SizeOf">
+            <summary>
+sizeof(CvDTreeParams)
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvDTreeParams">
+            <summary>
+결정 트리의 학습 파라미터
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeNode.Depth">
+            <summary>
+노드의 깊이. 루트 노드의 깊이는 0 이며, 자식 노드의 깊이는 부모 노드의 깊이 +1 된다.
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeNode.SampleCount">
+            <summary>
+학습 스테이지에서 노드로 분류되는 샘플수.
+이것은 곤란한 케이스를 해결하기 위해서 이용된다.즉 제일 분기의 변수가 발견되지 않고, 다른 모든 대리 분기에 대한 변수도 발견되지 않는 경우는,
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeNode.Split">
+            <summary>
+최초의(첫번째) 분기의 포인터．
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeNode.Right">
+            <summary>
+자식 노드의 오른쪽 포인터
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeNode.Left">
+            <summary>
+자식 노드(왼쪽)의 포인터
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeNode.Parent">
+            <summary>
+부모노드의 포인터
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeNode.Value">
+            <summary>
+트리의 노드에 할당할 수 있었던 값. 이것은 클래스 라벨인가, 추정된 함수치의 언젠가된다.
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeNode.Tn">
+            <summary>
+복수의 트리를 차례로 늘어놓았을 경우의 트리의 인덱스.
+이러한 인덱스는, pruning 실행중 또는 그 후에 이용된다.
+루트 노드는, 키마타체에 있어서의 최대치 Tn 를 가져, 자식 노드는 부모노드의 Tn 이하의 Tn 를 가진다.
+TnCvDTree::pruned_tree_idx 가 되는 노드는, 초목 손질을 실시할 때에 그것들이 트리로부터 물리적으로 삭제되지 않아도,
+예측 스테이지에 있어 고려되지 않는다(대응하는 가지가 벤 것 라고 보여진다).
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeNode.ClassIdx">
+            <summary>
+노드에 할당할 수 있었던 정규화된 클래스 인덱스(0 으로부터 class_count-1 까지의 범위).분류목과 트리 집합의 내부에서 이용된다. 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeNode.CvPtr">
+            <summary>
+데이터 포인터 (CvDTreeNode*)
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvDTreeNode.SizeOf">
+            <summary>
+sizeof(CvDTreeNode) 
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvDTreeNode">
+            <summary>
+결정 트리 노드
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeSplit.OrdSplitPoint">
+            <summary>
+둾뢐귺깑긕깏긛?궳볙븫밒궸뿕뾭궠귢귡갆 
+</summary>
+            <summary>
+Used internally by the training algorithm. 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeSplit.OrdC">
+            <summary>
+쁀뫏빾릶궸뫮궥귡빁딌궻뤾뜃갅?뭠갆
+var_value &lt; c 궻뤾뜃 next_node&lt;-left 갅궩궎궳궶궋뤾뜃 next_node&lt;-right갆  
+</summary>
+            <summary>
+The threshold value in case of split on an ordered variable.
+The rule is: if var_value &lt; c then next_node&lt;-left else next_node&lt;-right
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeSplit.Subset">
+            <summary>
+긇긡긕깏빾릶궸뫮궥귡빁딌궻뤾뜃갅븫빁뢜뜃귩?궥긮긞긣봹쀱갆
+var_value 궕 subset 궸뫌궥귡뤾뜃 next_node&lt;-left 갅궩궎궳궶궋뤾뜃 next_node&lt;-right갆  
+</summary>
+            <summary>
+Bit array indicating the value subset in case of split on a categorical variable.
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeSplit.Next">
+            <summary>
+긩?긤빁딌깏긚긣볙궻렅궻빁딌귉궻?귽깛?.  
+</summary>
+            <summary>
+Pointer to the next split in the node split list. 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeSplit.Quality">
+            <summary>
+맫궻릶궳?뙸궠귢귡빁딌궻긏긆깏긡귻갆
+궞귢궼띍귖뢣뾴궶빁딌궻멗묖갅묆뿚빁딌궻멗묖갋??긣궸뾭궋귞귢귡갆
+뽜궕?맟궠귢궫뚣궼갅빾릶궻뢣뾴뱗귩똶럁궥귡궫귕궸뾭궋귞귢귡갆  
+</summary>
+            <summary>
+The split quality, a positive number. 
+It is used to choose the best primary split, then to choose and sort the surrogate splits. 
+After the tree is constructed, it is also used to compute variable importance.  
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeSplit.Inversed">
+            <summary>
+true궻뤾뜃갅땤빁딌딮뫁궕뾭궋귞귢귡걁궰귏귟뜺덭궻?궕뚴듂궠귢귡걂갆 
+</summary>
+            <summary>
+When true, the inverse split rule is used (i.e. left and right branches are exchanged in the expressions below) 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeSplit.VarIdx">
+            <summary>
+빁딌궳뾭궋귞귢귡빾릶궻귽깛긢긞긏긚갆
+</summary>
+            <summary>
+Index of the variable used in the split 
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvDTreeSplit.CvPtr">
+            <summary>
+긢???귽깛? (CvDTreeSplit*)
+</summary>
+            <summary>
+Data pointer (CvDTreeSplit*)
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvDTreeSplit.SizeOf">
+            <summary>
+sizeof(CvDTreeSplit) 
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvDTreeSplit">
+            <summary>
+뙂믦뽜긩?긤궻빁딌
+</summary>
+            <summary>
+Decision tree node split
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvSVMParams.TermCrit">
+            <summary>
+종료조건
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvSVMParams.ClassWeights">
+            <summary>
+SVMType.CSvc 용
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvSVMParams.P">
+            <summary>
+SVMType.EpsSvr 용
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvSVMParams.Nu">
+            <summary>
+SVMType.NuSvc, SVMType.OneClass, SVMType.NuSvr 용
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvSVMParams.C">
+            <summary>
+SVMType.CSvc, SVMType.EpsSvr, SVMType.NuSvr 용
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvSVMParams.Coef0">
+            <summary>
+poly/sigmoid 용
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvSVMParams.Gamma">
+            <summary>
+poly/rbf/sigmoid 용
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvSVMParams.Degree">
+            <summary>
+poly 용
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvSVMParams.KernelType">
+            <summary>
+SVM 커넬의 종류
+</summary>
+        </member>
+        <member name="P:OpenCvSharp.MachineLearning.CvSVMParams.SVMType">
+            <summary>
+SVM의 종류
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVMParams.#ctor(OpenCvSharp.MachineLearning.SVMType,OpenCvSharp.MachineLearning.SVMKernelType,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,OpenCvSharp.CvMat,OpenCvSharp.CvTermCriteria)">
+            <summary>
+Constructor
+</summary>
+            <param name="svm_type">SVM의 종류</param>
+            <param name="kernel_type">SVM 커넬의 종류</param>
+            <param name="degree">poly 용</param>
+            <param name="gamma">poly/rbf/sigmoid 용</param>
+            <param name="coef0">poly/sigmoid 용</param>
+            <param name="C">SVMType.CSvc, SVMType.EpsSvr, SVMType.NuSvr 용</param>
+            <param name="nu">SVMType.NuSvc, SVMType.OneClass, SVMType.NuSvr 용</param>
+            <param name="p">SVMType.EpsSvr 용</param>
+            <param name="class_weights">SVMType.CSvc 용</param>
+            <param name="term_crit">종료 조건</param>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVMParams.#ctor">
+            <summary>
+Constructor
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.CvSVMParams.SizeOf">
+            <summary>
+sizeof(CvSVMParams)
+</summary>
+        </member>
+        <member name="M:OpenCvSharp.MachineLearning.CvSVMParams.#ctor(CvSVMParams)">
+            <summary>
+Constructor
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.CvSVMParams">
+            <summary>
+SVM 학습 파라미터
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.SVMKernelType">
+            <summary>
+SVM 커넬의 종류
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMKernelType.Sigmoid">
+            <summary>
+시그모이드 함수가 커넬로서 이용된다.d(x,y) = tanh(gamma*(xy) +coef0) [CvSVM::SIGMOID]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMKernelType.Rbf">
+            <summary>
+동경 기저 함수 커넬.대부분의 경우, 적절히 동작하는： d(x,y) = exp(-gamma*|x-y|^2) [CvSVM::RBF]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMKernelType.Poly">
+            <summary>
+다항식 커넬： d(x,y) = (gamma*(xy) +coef0) ^degree [CvSVM::POLY]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMKernelType.Linear">
+            <summary>
+매핑은 행해지지 않는다.원래의 특징 공간내에서, 선형 분리(혹은 회귀)를 한다.가장 고속의 옵션.d(x,y) = xy == (x,y) [CvSVM::LINEAR]
+</summary>
+        </member>
+        <member name="T:OpenCvSharp.MachineLearning.SVMType">
+            <summary>
+SVM의 종류
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMType.NuSvr">
+            <summary>
+회귀.p 대신에 nu 가 이용된다.[CvSVM::NU_SVR]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMType.EpsSvr">
+            <summary>
+회귀.학습 집합의 특징 벡터와 초평면과의 거리가 p 보다 짧지 않으면 안 된다. 탈락치에 대해서는 패널티 승수 C 가 이용된다.[CvSVM::EPS_SVR]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMType.OneClass">
+            <summary>
+1-클래스 SVM.대학 전체습데이터는 같은 클래스로부터 얻을 수 있어 SVM는 그 클래스를 특징 공간의 다른 클래스로부터 분리하는 경계를 요구한다.[CvSVM::ONE_CLASS]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMType.NuSvc">
+            <summary>
+완전한 분리가 될 가능성이 있는 n-클래스 분류. C 대신에 파라미터 nu  (0..1 의 범위, 큰 값만큼 매끄러운 판단 경계를 나타낸다)가 이용된다.[CvSVM::NU_SVC]
+</summary>
+        </member>
+        <member name="F:OpenCvSharp.MachineLearning.SVMType.CSvc">
+            <summary>
+탈락치에 대한 패널티 승수 C 를 가져, 불완전한 분리를 허용 하는 n-클래스 분류(n&gt;=2)[CvSVM::C_SVC]
+</summary>
+        </member>
+        <!-- Discarding badly formed XML document comment for member 'M:OpenCvSharp.MachineLearning.CvDTree.Predict(OpenCvSharp.CvMat,OpenCvSharp.CvMat,System.Boolean)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:OpenCvSharp.MachineLearning.CvBoost.Predict(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvSlice,System.Boolean)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:OpenCvSharp.MachineLearning.CvDTree.Predict(OpenCvSharp.CvMat,OpenCvSharp.CvMat,System.Boolean)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:OpenCvSharp.MachineLearning.CvBoost.Predict(OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvMat,OpenCvSharp.CvSlice,System.Boolean)'. -->
+    </members>
+</doc>

@@ -17,3 +17,13 @@
 \\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\obj\Debug\SandBox.pdb
 \\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\obj\Debug\SandBox.findFigure.resources
 \\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\obj\Debug\SandBox.search_Patient.resources
+\\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\bin\Debug\OpenCvSharp.Blob.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\bin\Debug\OpenCvSharp.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\bin\Debug\OpenCvSharp.Extern.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\bin\Debug\OpenCvSharp.MachineLearning.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\bin\Debug\OpenCvSharp.UserInterface.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\bin\Debug\OpenCvSharp.WPF.dll
+\\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\bin\Debug\OpenCvSharp.xml
+\\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\bin\Debug\OpenCvSharp.Blob.xml
+\\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\bin\Debug\OpenCvSharp.MachineLearning.xml
+\\psf\Home\Documents\Visual Studio 2013\Projects\SandBox\SandBox\bin\Debug\OpenCvSharp.UserInterface.xml

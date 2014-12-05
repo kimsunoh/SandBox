@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpenCvSharp.UserInterface</name>
+    </assembly>
+    <members>
+        <member name="T:OpenCvSharp.UserInterface.CvWindowEx">
+            <summary>
+            highgui를 이용하지 않는, System.Windows.Forms에 의한 CvWindow의 실장
+            </summary>
+        </member>
+        <member name="F:OpenCvSharp.UserInterface.CvWindowEx.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.#cctor">
+            <summary>
+            static constructor
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.#ctor">
+            <summary>
+            디폴트 초기화
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.#ctor(OpenCvSharp.IplImage)">
+            <summary>
+            초기화
+            </summary>
+            <param name="image"></param>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.#ctor(System.Windows.Forms.PictureBoxSizeMode)">
+            <summary>
+            초기화
+            </summary>
+            <param name="sizeMode"></param>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.#ctor(OpenCvSharp.IplImage,System.Windows.Forms.PictureBoxSizeMode)">
+            <summary>
+            초기화
+            </summary>
+            <param name="image"></param>
+            <param name="sizeMode"></param>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.Dispose">
+            <summary>
+            자원의 해제
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.ShowImage(OpenCvSharp.IplImage)">
+            <summary>
+            지정한 IplImage를 표시한다
+            </summary>
+            <param name="image"></param>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.CreateTrackbar(System.String,System.Int32,System.Int32,OpenCvSharp.CvTrackbarCallback)">
+            <summary>
+            윈도우에 트랙바를 작성해, 작성한 트랙바를 돌려준다
+            </summary>
+            <param name="name">트랙바의 이름</param>
+            <param name="value">슬라이더의 초기 위치</param>
+            <param name="count">슬라이더의 최대치.최소치는 항상 0.</param>
+            <param name="onChange">슬라이더의 위치가 변경될 때마다 불려 가는 Delegate</param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.WaitKey">
+            <summary>
+            아무키나 눌릴때까지 대기
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.WaitKey(System.Int32)">
+            <summary>
+            키가 눌릴 때까지 대기한다.
+            </summary>
+            <returns>눌린 키의 키코드</returns>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.ShowImages(OpenCvSharp.IplImage[])">
+            <summary>
+            인수로 지정한 화상을 각각 다른 윈도우로 표시해, 키 입력 대기 상태로 한다.
+            </summary>
+            <param name="images">표시시키는 화상.임의의 갯수를 지정할 수 있다.</param>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.StartKeyCheck">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.EndKeyCheck">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.ClosedAllWindows">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.GetPressedKey">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.CvWindowEx.SetClientSize(System.Drawing.Size)">
+            <summary>
+            ClientSize를 화면 크기에 맞춰 설정한다.
+            </summary>
+            <param name="size"></param>
+        </member>
+        <member name="P:OpenCvSharp.UserInterface.CvWindowEx.Image">
+            <summary>
+            출력할 IplImage를 취득·설정한다
+            </summary>
+        </member>
+        <member name="P:OpenCvSharp.UserInterface.CvWindowEx.PictureBox">
+            <summary>
+            화상을 출력하고 있는 PictureBox 컨트롤을 취득한다
+            </summary>
+        </member>
+        <member name="P:OpenCvSharp.UserInterface.CvWindowEx.Trackbars">
+            <summary>
+            CreateTrackbar로 작성한 트랙바의 리스트를 취득한다
+            </summary>
+        </member>
+        <member name="T:OpenCvSharp.UserInterface.TrackbarWithLabel">
+            <summary>
+            라벨이 세트 된 트랙바
+            </summary>
+        </member>
+        <member name="F:OpenCvSharp.UserInterface.TrackbarWithLabel.components">
+            <summary> 
+            必要なデザイナ変数です。
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.TrackbarWithLabel.Dispose(System.Boolean)">
+            <summary> 
+            使用中のリソースをすべてクリーンアップします。
+            </summary>
+            <param name="disposing">マネージ リソースが破棄される場合 true、破棄されない場合は false です。</param>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.TrackbarWithLabel.InitializeComponent">
+            <summary> 
+            デザイナ サポートに必要なメソッドです。このメソッドの内容を 
+            コード エディタで変更しないでください。
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.TrackbarWithLabel.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.TrackbarWithLabel.#ctor(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="labelText"></param>
+            <param name="max"></param>
+            <param name="min"></param>
+            <param name="pos"></param>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.TrackbarWithLabel.SetLabelText">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.TrackbarWithLabel._trackBar_ValueChanged(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:OpenCvSharp.UserInterface.TrackbarWithLabel.Trackbar">
+            <summary>
+            TrackBar 컨트롤
+            </summary>
+        </member>
+        <member name="P:OpenCvSharp.UserInterface.TrackbarWithLabel.Label">
+            <summary>
+            Label 컨트롤
+            </summary>
+        </member>
+        <member name="T:OpenCvSharp.UserInterface.PictureBoxIpl">
+            <summary>
+            IplImage의 표시를 서포트한 PictureBox
+            </summary>
+        </member>
+        <member name="M:OpenCvSharp.UserInterface.PictureBoxIpl.#ctor">
+            <summary>
+            초기화
+            </summary>
+        </member>
+        <member name="P:OpenCvSharp.UserInterface.PictureBoxIpl.ImageIpl">
+            <summary>
+            출력할 IplImage를 취득·설정한다
+            </summary>
+        </member>
+    </members>
+</doc>
