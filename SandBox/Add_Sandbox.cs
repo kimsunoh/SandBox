@@ -43,8 +43,8 @@ namespace SandBox
             List<string> sandbox;
             // TEST용 시나리오
             // 사진들에서 피규어 찾아내고 메세지 띄우기
-            if (FaceDetect(@"C:\!TestSet\sampleimage\1.jpg", @"C:\!TestSet\CascadeTrainer\cascade.xml"))
-            {
+            if (FaceDetect(@"C:\!TestSet\sampleimage\1.jpg", @"C:\!TestSet\CascadeTrainer\cascade.xml")){ // 있는 예시
+            //if (FaceDetect(@"C:\!TestSet\sampleimage\4.jpg", @"C:\!TestSet\CascadeTrainer\cascade.xml")){ // 없는 예시
                 MessageBox.Show("fig1");
             }
             else
@@ -61,27 +61,35 @@ namespace SandBox
         private bool FaceDetect(string sandboxPath, string cascadeXmlPath)
         {
             //using (IplImage img = new IplImage(sandboxPath, LoadMode.Color))
-            using (IplImage img = Cv.LoadImage(sandboxPath, LoadMode.Color))
-            {
-                using (IplImage gray = new IplImage(img.Size, BitDepth.U8, 1))
+            try {
+                using (IplImage img = Cv.LoadImage(sandboxPath, LoadMode.Color))
                 {
-                    Cv.CvtColor(img, gray, ColorConversion.BgrToGray);
-                    Cv.Resize(gray, img, Interpolation.Linear);
-                    Cv.EqualizeHist(img, img);
-                    //EqualizeHist = 히스토그램 평활화. 그레이 이미지를 특출나게 어둡거나 밝은 부분을 적당히 펴줘서 전체 값이 일정하게 되도록 해줌
-                }
+                    using (IplImage gray = new IplImage(img.Size, BitDepth.U8, 1))
+                    {
 
-                using (CvHaarClassifierCascade cascade = CvHaarClassifierCascade.FromFile(cascadeXmlPath))
-                //haarcascade_frontalface_alt2.xml얼굴 검출에 대한 기계학습 자료가 담겨져 있음.
-                //이자료와 비교해서 비슷하면 얼굴로 인식하게 되어 있음
-                using (CvMemStorage storage = new CvMemStorage())
-                {
-                    storage.Clear();
-                    //얼굴의 검출
-                    CvSeq faces = Cv.HaarDetectObjects(img, cascade, storage, 1.1, 2, 0, new CvSize(30, 30));
-                    //검출된 얼굴을 facesdp 저장. faces.Total에 총 검풀된 얼굴수가 들어가 있음
-                    return (faces.Total > 0);
+                        Cv.CvtColor(img, gray, ColorConversion.BgrToGray);
+                        //Cv.Resize(gray, img, Interpolation.Linear);
+                        //Cv.EqualizeHist(img, img);
+                        //EqualizeHist = 히스토그램 평활화. 그레이 이미지를 특출나게 어둡거나 밝은 부분을 적당히 펴줘서 전체 값이 일정하게 되도록 해줌
+                    }
+
+                    using (CvHaarClassifierCascade cascade = CvHaarClassifierCascade.FromFile(cascadeXmlPath))
+                    //haarcascade_frontalface_alt2.xml얼굴 검출에 대한 기계학습 자료가 담겨져 있음.
+                    //이자료와 비교해서 비슷하면 얼굴로 인식하게 되어 있음
+                    using (CvMemStorage storage = new CvMemStorage())
+                    {
+                        storage.Clear();
+                        //얼굴의 검출
+                        CvSeq faces = Cv.HaarDetectObjects(img, cascade, storage, 1.1, 2, 0, new CvSize(30, 30));
+                        //검출된 얼굴을 facesdp 저장. faces.Total에 총 검풀된 얼굴수가 들어가 있음
+                        return (faces.Total > 0);
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine(e);
+                return false;
             }
         }
         private void pictureBox_lt_ph_Click(object sender, EventArgs e)
