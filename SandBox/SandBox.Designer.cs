@@ -64,6 +64,7 @@
             this.tb_id.Name = "tb_id";
             this.tb_id.Size = new System.Drawing.Size(100, 21);
             this.tb_id.TabIndex = 2;
+            this.tb_id.Text = "test";
             // 
             // tb_pw
             // 
@@ -71,6 +72,7 @@
             this.tb_pw.Name = "tb_pw";
             this.tb_pw.Size = new System.Drawing.Size(100, 21);
             this.tb_pw.TabIndex = 3;
+            this.tb_pw.Text = "test";
             // 
             // label1
             // 

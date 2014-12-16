@@ -13,10 +13,24 @@ namespace SandBox
 {
     public partial class Add_Sandbox : Form
     {
-
         private String fiFigNum;
         private String laFigNum;
-
+        string[] picBoxArr = new string[8];
+        /**private String pictureBox_lt_ph_path;
+        private String pictureBox_lb_ph_path;
+        private String pictureBox_rt_ph_path;
+        private String pictureBox_rb_ph_path;
+        private String pictureBox_cen_ph_path;
+        private String pictureBox_abo_ph_path;
+        private String pictureBox_pat_ph_path;
+        private String pictureBox_best_ph_path;
+        **/
+        static class Query
+        {
+            public static readonly String selectFig = @"SELECT * FROM TB_FIGURE WHERE FIG_NUM = '{0}' ";
+            public static readonly String countFig = @"SELECT count(*) FROM TB_PHOTO";
+            public static readonly String inserPhoto = @"INSERT INTO TB_PHOTO(PO_NUM, PHOTO_DATE) VALUES( (SELECT COUNT(*) FROM TB_PHOTO), '{0}')";
+        }
         public Add_Sandbox()
         {
             InitializeComponent();
@@ -55,8 +69,11 @@ namespace SandBox
 
         private void insertForDB()
         {
-            //TB_SANDBOX
-
+            int pNum = int.Parse(DBFactory.ExcuteQuery(String.Format(Query.countFig)).Tables[0].Rows[0][0].ToString());
+            // 선택된 모래상자 이미지들을 DB에 저장
+            // TODO 쿼리를 전역변수로 바꾸기
+            for (int i = 0; i < 8; i++ )
+                DBFactory.ExcuteNonQuery(@"INSERT INTO TB_PHOTO (PO_NUM, PHOTO_DATA) VALUES( (SELECT COUNT(*) FROM TB_PHOTO), '" + utfEncoding.ToUtf8(picBoxArr[i]) + "')" ); 
         }
         private bool FaceDetect(string sandboxPath, string cascadeXmlPath)
         {
@@ -99,7 +116,7 @@ namespace SandBox
             {
                 pictureBox_lt_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_lt_ph.Tag = ofd.FileName;
-                String pictureBox_lt_ph_path = ofd.FileName;
+                picBoxArr[0] = ofd.FileName;
             }
         }
 
@@ -110,7 +127,7 @@ namespace SandBox
             {
                 pictureBox_lb_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_lb_ph.Tag = ofd.FileName;
-                String pictureBox_lb_ph_path = ofd.FileName;
+                picBoxArr[1] = ofd.FileName;
             }
         }
 
@@ -121,7 +138,7 @@ namespace SandBox
             {
                 pictureBox_rt_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_rt_ph.Tag = ofd.FileName;
-                String pictureBox_rt_ph_path = ofd.FileName;
+                picBoxArr[2] = ofd.FileName;
             }
         }
 
@@ -132,7 +149,7 @@ namespace SandBox
             {
                 pictureBox_rb_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_rb_ph.Tag = ofd.FileName;
-                String pictureBox_rb_ph_path = ofd.FileName;
+                picBoxArr[3] = ofd.FileName;
             }
         }
 
@@ -143,7 +160,7 @@ namespace SandBox
             {
                 pictureBox_cen_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_cen_ph.Tag = ofd.FileName;
-                String pictureBox_cen_ph_path = ofd.FileName;
+                picBoxArr[4] = ofd.FileName;
             }
         }
 
@@ -154,7 +171,7 @@ namespace SandBox
             {
                 pictureBox_abo_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_abo_ph.Tag = ofd.FileName;
-                String pictureBox_abo_ph_path = ofd.FileName;
+                picBoxArr[5] = ofd.FileName;
             }
         }
 
@@ -165,7 +182,7 @@ namespace SandBox
             {
                 pictureBox_pat_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_pat_ph.Tag = ofd.FileName;
-                String pictureBox_pat_ph_path = ofd.FileName;
+                picBoxArr[6] = ofd.FileName;
             }
         }
 
@@ -176,7 +193,7 @@ namespace SandBox
             {
                 pictureBox_best_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_best_ph.Tag = ofd.FileName;
-                String pictureBox_best_ph_path = ofd.FileName;
+                picBoxArr[7] = ofd.FileName;
             }
         }
 
@@ -191,8 +208,7 @@ namespace SandBox
         private void listView_select_fi_fig(string fignum)
         {
             DataSet ds = DBFactory.ExcuteQuery(
-                                @"SELECT * FROM TB_FIGURE WHERE FIG_NUM = "
-                                + "'" + fignum + "'"
+                                String.Format(Query.selectFig, fignum)
                             );
 
             //FIG_NUM,IMAGE,CATEGORY,DIVISION,SECTION,SYMBOL
@@ -214,8 +230,7 @@ namespace SandBox
         private void listView_select_la_fig(string fignum)
         {
             DataSet ds = DBFactory.ExcuteQuery(
-                                @"SELECT * FROM TB_FIGURE WHERE FIG_NUM = "
-                                + "'" + fignum + "'"
+                                String.Format(Query.selectFig, fignum)
                             );
 
             //FIG_NUM,IMAGE,CATEGORY,DIVISION,SECTION,SYMBOL

@@ -154,13 +154,13 @@ namespace SandBox
 
         private void btn_figure_add_Click(object sender, EventArgs e)
         {
-            if (Add_Fig())
+            if (Add_FigureToDb())
             {
-                MessageBox.Show("Done.");
                 //추가된 fig이미지를 positive sample 이미지 리스트 테이블에 추가 
                 string strCmdText;
-                strCmdText = @"copy c:\sandBox\a.txt c:\sandBox\b.txt";
+                strCmdText = @"copy c:\_SandBox\a.txt c:\_SandBox\b.txt";
                 System.Diagnostics.Process.Start("CMD.exe", "/C " + strCmdText); //cmd에서 기계학습시키기
+                MessageBox.Show("Done.");
             }
             else
             {
@@ -170,7 +170,7 @@ namespace SandBox
         //
         /*register Error*/
         //
-        private bool Add_Fig(){
+        private bool Add_FigureToDb(){
             
             if (pictureBox_fig_img.Tag.ToString() == null)
             {
@@ -183,11 +183,14 @@ namespace SandBox
                 byte[] bImage = new byte[fs.Length];
                 fs.Read(bImage, 0, (int)fs.Length);
 
+                int fNum = int.Parse(DBFactory.ExcuteQuery(@"SELECT count(*) FROM TB_FIGURE").Tables[0].Rows[0][0].ToString());
+                fNum++;
+
                 DBFactory.ExcuteNonQuery(
                     @"INSERT INTO "
                     + @" TB_FIGURE (FIG_NUM,IMAGE,CATEGORY,DIVISION,SECTION,SYMBOL)"
                     + @"VALUES"
-                    + @"('" + (new Random()).Next(1000000000) 
+                    + @"('" + fNum
                     + "','"
                     + utfEncoding.ToUtf8(tb_img_path.Text) + "','"
                     + utfEncoding.ToUtf8(comboBox_add_cate.Text) + "','"
@@ -338,13 +341,21 @@ namespace SandBox
     {
         internal static string ToUtf8(string utf8String)
         {
+            if (utf8String == null)
+            {
+                return null;
+            }
             byte[] buffer = Encoding.Unicode.GetBytes(utf8String);
             return Convert.ToBase64String(buffer);
         }
 
-        internal static string FromUtf8(string utf8_String)
+        internal static string FromUtf8(string utf8String)
         {
-            byte[] buffer = Convert.FromBase64String(utf8_String);
+            if (utf8String == null)
+            {
+                return null;
+            }
+            byte[] buffer = Convert.FromBase64String(utf8String);
             return Encoding.Unicode.GetString(buffer);
         }
     }

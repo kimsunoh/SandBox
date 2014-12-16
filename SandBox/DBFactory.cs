@@ -10,8 +10,11 @@ namespace SandBox
 {
     class DBFactory
     {
-        public readonly static string connStr = @"Data Source=C:\Users\sno\Documents\sandBox_db.db";
+        public readonly static string connStr = @"Data Source=C:\sandBox_db.db";
        
+        /**
+         * select, or dataset returned sql
+         * */
         public static DataSet ExcuteQuery(string query)
         {
             try
@@ -28,13 +31,21 @@ namespace SandBox
             }
         }
 
+        /**
+         * insert, update
+         * */
         public static void ExcuteNonQuery(string query)
         {
             using (var conn = new SQLiteConnection(connStr))
             {
                 conn.Open();
+                Console.WriteLine(query);
                 SQLiteCommand cmd = new SQLiteCommand(query, conn);
-                cmd.ExecuteNonQuery();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.Text;
+                int errorCode = cmd.ExecuteNonQuery();
+                Console.WriteLine("done. : " + errorCode);
+                conn.Close();
             }
         }
 
