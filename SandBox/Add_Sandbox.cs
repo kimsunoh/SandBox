@@ -17,13 +17,13 @@ namespace SandBox
         private String laFigNum;
         string[] picBoxArr = new string[8];
         /**private String pictureBox_lt_ph_path;
-        private String pictureBox_lb_ph_path;
-        private String pictureBox_rt_ph_path;
-        private String pictureBox_rb_ph_path;
-        private String pictureBox_cen_ph_path;
-        private String pictureBox_abo_ph_path;
-        private String pictureBox_pat_ph_path;
-        private String pictureBox_best_ph_path;
+            private String pictureBox_lb_ph_path;
+            private String pictureBox_rt_ph_path;
+            private String pictureBox_rb_ph_path;
+            private String pictureBox_cen_ph_path;
+            private String pictureBox_abo_ph_path;
+            private String pictureBox_pat_ph_path;
+            private String pictureBox_best_ph_path;
         **/
         static class Query
         {
@@ -57,7 +57,9 @@ namespace SandBox
             List<string> sandbox;
             // TEST용 시나리오
             // 사진들에서 피규어 찾아내고 메세지 띄우기
-            if (FaceDetect(@"C:\!TestSet\sampleimage\1.jpg", @"C:\!TestSet\CascadeTrainer\cascade.xml")){ // 있는 예시
+            if (FaceDetect(picBoxArr[0], @"C:\!TestSet\CascadeTrainer\cascade.xml"))
+            { // 있는 예시
+            //if (FaceDetect(@"C:\!TestSet\sampleimage\1.jpg", @"C:\!TestSet\CascadeTrainer\cascade.xml")){ // 있는 예시
             //if (FaceDetect(@"C:\!TestSet\sampleimage\4.jpg", @"C:\!TestSet\CascadeTrainer\cascade.xml")){ // 없는 예시
                 MessageBox.Show("fig1");
             }
@@ -79,17 +81,17 @@ namespace SandBox
         {
             //using (IplImage img = new IplImage(sandboxPath, LoadMode.Color))
             try {
-                using (IplImage img = Cv.LoadImage(sandboxPath, LoadMode.Color))
+                //using (IplImage img = Cv.LoadImage(sandboxPath, LoadMode.Color))
+                using (IplImage img = Cv.LoadImage(sandboxPath, LoadMode.GrayScale))
                 {
-                    using (IplImage gray = new IplImage(img.Size, BitDepth.U8, 1))
+                    using (IplImage gray = Cv.CreateImage(new CvSize(img.Width, img.Height), BitDepth.U8, 1))
                     {
-
-                        Cv.CvtColor(img, gray, ColorConversion.BgrToGray);
-                        //Cv.Resize(gray, img, Interpolation.Linear);
-                        //Cv.EqualizeHist(img, img);
+                        //Cv.CvtColor(img, gray, ColorConversion.BgrToGray);
+                        Cv.Resize(gray, img, Interpolation.Linear);
+                        Cv.EqualizeHist(img, img);
                         //EqualizeHist = 히스토그램 평활화. 그레이 이미지를 특출나게 어둡거나 밝은 부분을 적당히 펴줘서 전체 값이 일정하게 되도록 해줌
                     }
-
+                    
                     using (CvHaarClassifierCascade cascade = CvHaarClassifierCascade.FromFile(cascadeXmlPath))
                     //haarcascade_frontalface_alt2.xml얼굴 검출에 대한 기계학습 자료가 담겨져 있음.
                     //이자료와 비교해서 비슷하면 얼굴로 인식하게 되어 있음
@@ -97,8 +99,14 @@ namespace SandBox
                     {
                         storage.Clear();
                         //얼굴의 검출
-                        CvSeq faces = Cv.HaarDetectObjects(img, cascade, storage, 1.1, 2, 0, new CvSize(30, 30));
+                        CvSeq<CvAvgComp> faces = Cv.HaarDetectObjects(img, cascade, storage, 1.1, 2, 0, new CvSize(30, 30));
                         //검출된 얼굴을 facesdp 저장. faces.Total에 총 검풀된 얼굴수가 들어가 있음
+                        Console.WriteLine("-----");
+                        for (int i = 0; i < faces.Total; i++)
+                        {
+                            CvAvgComp comp = (CvAvgComp)Cv.GetSeqElem(faces,i);
+                            Console.WriteLine(comp.Rect.TopLeft + " " + comp.Rect.Width + " " + comp.Rect.Height);
+                        }
                         return (faces.Total > 0);
                     }
                 }
@@ -116,6 +124,7 @@ namespace SandBox
             {
                 pictureBox_lt_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_lt_ph.Tag = ofd.FileName;
+                pictureBox_lt_ph.SizeMode = PictureBoxSizeMode.StretchImage;
                 picBoxArr[0] = ofd.FileName;
             }
         }
@@ -127,6 +136,7 @@ namespace SandBox
             {
                 pictureBox_lb_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_lb_ph.Tag = ofd.FileName;
+                pictureBox_lb_ph.SizeMode = PictureBoxSizeMode.StretchImage;
                 picBoxArr[1] = ofd.FileName;
             }
         }
@@ -138,6 +148,7 @@ namespace SandBox
             {
                 pictureBox_rt_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_rt_ph.Tag = ofd.FileName;
+                pictureBox_rt_ph.SizeMode = PictureBoxSizeMode.StretchImage;
                 picBoxArr[2] = ofd.FileName;
             }
         }
@@ -149,6 +160,7 @@ namespace SandBox
             {
                 pictureBox_rb_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_rb_ph.Tag = ofd.FileName;
+                pictureBox_rb_ph.SizeMode = PictureBoxSizeMode.StretchImage;
                 picBoxArr[3] = ofd.FileName;
             }
         }
@@ -160,6 +172,7 @@ namespace SandBox
             {
                 pictureBox_cen_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_cen_ph.Tag = ofd.FileName;
+                pictureBox_cen_ph.SizeMode = PictureBoxSizeMode.StretchImage;
                 picBoxArr[4] = ofd.FileName;
             }
         }
@@ -171,6 +184,7 @@ namespace SandBox
             {
                 pictureBox_abo_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_abo_ph.Tag = ofd.FileName;
+                pictureBox_abo_ph.SizeMode = PictureBoxSizeMode.StretchImage;
                 picBoxArr[5] = ofd.FileName;
             }
         }
@@ -182,6 +196,7 @@ namespace SandBox
             {
                 pictureBox_pat_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_pat_ph.Tag = ofd.FileName;
+                pictureBox_pat_ph.SizeMode = PictureBoxSizeMode.StretchImage;
                 picBoxArr[6] = ofd.FileName;
             }
         }
@@ -193,6 +208,7 @@ namespace SandBox
             {
                 pictureBox_best_ph.Image = new Bitmap(ofd.FileName);
                 pictureBox_best_ph.Tag = ofd.FileName;
+                pictureBox_best_ph.SizeMode = PictureBoxSizeMode.StretchImage;
                 picBoxArr[7] = ofd.FileName;
             }
         }

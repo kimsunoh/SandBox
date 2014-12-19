@@ -154,53 +154,50 @@ namespace SandBox
 
         private void btn_figure_add_Click(object sender, EventArgs e)
         {
-            if (Add_FigureToDb())
+            if (pictureBox_fig_img.Tag.ToString() == null)
             {
-                //추가된 fig이미지를 positive sample 이미지 리스트 테이블에 추가 
-                string strCmdText;
-                strCmdText = @"copy c:\_SandBox\a.txt c:\_SandBox\b.txt";
-                System.Diagnostics.Process.Start("CMD.exe", "/C " + strCmdText); //cmd에서 기계학습시키기
-                MessageBox.Show("Done.");
+                Console.WriteLine("No Image");
+                MessageBox.Show("이미지를 선택해 주십시오");
+                return;
             }
-            else
-            {
-                MessageBox.Show("Fail");
-            }
+
+            int fNum = Add_FigureToDb();
+            //추가된 fig이미지를 positive sample 이미지 리스트 테이블에 추가 
+            string strCmdText;
+            string pathFigureImagePath = tb_img_path.Text;
+            strCmdText = @"cd C:\_SandBox\cascadeExcercise\";
+            // strCmdText = strCmdText + " & " + "";
+            strCmdText = strCmdText + " & " + @"mkdir C:\_SandBox\cascadeExcercise\" + fNum;
+            //strCmdText = strCmdText + " & " + @"cd C:\_SandBox\cascadeExcercise\" + fNum;
+            strCmdText = strCmdText + " & " + @"C:\_SandBox\openCv\bin\opencv_traincascade.exe";
+            System.Diagnostics.Process.Start("CMD.exe", "/C " + strCmdText); //cmd에서 기계학습시키기
+            MessageBox.Show("Done.");
         }
         //
         /*register Error*/
         //
-        private bool Add_FigureToDb(){
-            
-            if (pictureBox_fig_img.Tag.ToString() == null)
-            {
-                Console.WriteLine("No Image");
-                return false;
-            }
-            else
-            {
-                FileStream fs = new FileStream(pictureBox_fig_img.Tag.ToString(), FileMode.Open, FileAccess.Read);
-                byte[] bImage = new byte[fs.Length];
-                fs.Read(bImage, 0, (int)fs.Length);
+        private int Add_FigureToDb(){
+            FileStream fs = new FileStream(pictureBox_fig_img.Tag.ToString(), FileMode.Open, FileAccess.Read);
+            byte[] bImage = new byte[fs.Length];
+            fs.Read(bImage, 0, (int)fs.Length);
 
-                int fNum = int.Parse(DBFactory.ExcuteQuery(@"SELECT count(*) FROM TB_FIGURE").Tables[0].Rows[0][0].ToString());
-                fNum++;
+            int fNum = int.Parse(DBFactory.ExcuteQuery(@"SELECT count(*) FROM TB_FIGURE").Tables[0].Rows[0][0].ToString());
+            fNum++;
 
-                DBFactory.ExcuteNonQuery(
-                    @"INSERT INTO "
-                    + @" TB_FIGURE (FIG_NUM,IMAGE,CATEGORY,DIVISION,SECTION,SYMBOL)"
-                    + @"VALUES"
-                    + @"('" + fNum
-                    + "','"
-                    + utfEncoding.ToUtf8(tb_img_path.Text) + "','"
-                    + utfEncoding.ToUtf8(comboBox_add_cate.Text) + "','"
-                    + utfEncoding.ToUtf8(comboBox_add_div.Text) + "','"
-                    + utfEncoding.ToUtf8(comboBox_add_sel.Text) + "','"
-                    + utfEncoding.ToUtf8(textBox_add_sym.Text) + "')"
-                );
-                fs.Close();
-                return true;
-            }
+            DBFactory.ExcuteNonQuery(
+                @"INSERT INTO "
+                + @" TB_FIGURE (FIG_NUM,IMAGE,CATEGORY,DIVISION,SECTION,SYMBOL)"
+                + @"VALUES"
+                + @"('" + fNum
+                + "','"
+                + utfEncoding.ToUtf8(tb_img_path.Text) + "','"
+                + utfEncoding.ToUtf8(comboBox_add_cate.Text) + "','"
+                + utfEncoding.ToUtf8(comboBox_add_div.Text) + "','"
+                + utfEncoding.ToUtf8(comboBox_add_sel.Text) + "','"
+                + utfEncoding.ToUtf8(textBox_add_sym.Text) + "')"
+            );
+            fs.Close();
+            return fNum;
         }
 
         private void btn_find_fig_Click(object sender, EventArgs e)
@@ -230,6 +227,7 @@ namespace SandBox
             findFigure ff = new findFigure();
             ff.toform1 += new toForm1(listView_select_fig);
             ff.Show();
+
             return ff;
         }
 

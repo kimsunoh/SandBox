@@ -43,8 +43,9 @@ namespace SandBox
                 SQLiteCommand cmd = new SQLiteCommand(query, conn);
                 cmd.Connection = conn;
                 cmd.CommandType = CommandType.Text;
-                int errorCode = cmd.ExecuteNonQuery();
-                Console.WriteLine("done. : " + errorCode);
+                //int errorCode = cmd.ExecuteNonQuery();
+                //Console.WriteLine("done. : " + errorCode);
+                Console.WriteLine("done. ");
                 conn.Close();
             }
         }
